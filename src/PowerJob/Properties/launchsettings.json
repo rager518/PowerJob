@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "PowerJob (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "PowerJob (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
