@@ -1,6 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.VisualBasic;
 using PowerJob.Commands;
+using PowerJob.Core.Settings;
 using Windows.System;
 
 namespace PowerJob.ViewModels;
@@ -10,10 +12,44 @@ public partial class PowerStartupViewModel : ObservableRecipient
     public PowerStartupViewModel()
     {
     }
+
+    public PowerStartupViewModel(ISettingsUtils settingsUtils, ISettingsRepository<GeneralSettings> settingsRepository, ISettingsRepository<HostsSettings> moduleSettingsRepository, Func<string, int> ipcMSGCallBackFunc, bool isElevated)
+    {
+        SettingsUtils = settingsUtils;
+        GeneralSettingsConfig = settingsRepository.SettingsConfig;
+        Settings = moduleSettingsRepository.SettingsConfig;
+        SendConfigMSG = ipcMSGCallBackFunc;
+
+        _isElevated = isElevated;
+
+        //InitializeEnabledValue();
+    }
+
+
     private bool _enabledStateIsGPOConfigured = true;
     private bool _isEnabled = true;
     private bool _isElevated = true;
     public int _linePosition;
+
+    private ISettingsUtils SettingsUtils
+    {
+        get; set;
+    }
+    private GeneralSettings GeneralSettingsConfig
+    {
+        get; set;
+    }
+
+    private HostsSettings Settings
+    {
+        get; set;
+    }
+
+    private Func<string, int> SendConfigMSG
+    {
+        get;
+    }
+
 
     public ButtonClickCommand LaunchEventHandler => new ButtonClickCommand(Launch);
 
@@ -56,14 +92,28 @@ public partial class PowerStartupViewModel : ObservableRecipient
 
     public bool LaunchAdministrator
     {
-        get => _enabledStateIsGPOConfigured;
-        set => _enabledStateIsGPOConfigured = value;
+        get => Settings.Properties.LaunchAdministrator;
+        set
+        {
+            if (value != Settings.Properties.LaunchAdministrator)
+            {
+                Settings.Properties.LaunchAdministrator = value;
+                NotifyPropertyChanged();
+            }
+        }
     }
 
     public bool ShowStartupWarning
     {
-        get => _enabledStateIsGPOConfigured;
-        set => _enabledStateIsGPOConfigured = value;
+        get => Settings.Properties.ShowStartupWarning;
+        set
+        {
+            if(value!= Settings.Properties.ShowStartupWarning)
+            {
+                Settings.Properties.ShowStartupWarning = value;
+                NotifyPropertyChanged();
+            }
+        }
     }
 
     public bool LoopbackDuplicates
@@ -83,5 +133,11 @@ public partial class PowerStartupViewModel : ObservableRecipient
     {
         get => _linePosition;
         set => _linePosition = value;
+    }
+
+    public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        OnPropertyChanged(propertyName);
+        SettingsUtils.SaveSettings(Settings.ToJsonString(), HostsSettings.ModuleName);
     }
 }

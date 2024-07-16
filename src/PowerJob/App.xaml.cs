@@ -39,6 +39,10 @@ public partial class App : Application
         return service;
     }
 
+    public static bool IsElevated
+    {
+        get; set;
+    }
     public static WindowEx MainWindow { get; } = new MainWindow();
 
     public static UIElement? AppTitlebar { get; set; }

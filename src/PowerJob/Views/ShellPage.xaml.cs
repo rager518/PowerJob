@@ -36,6 +36,11 @@ public sealed partial class ShellPage : Page
         AppTitleBarText.Text = "AppDisplayName".GetLocalized();
     }
 
+    public static int SendDefaultIPCMessage(string msg)
+    {
+        //DefaultSndMSGCallback?.Invoke(msg);
+        return 0;
+    }
     private void OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
         TitleBarHelper.UpdateTitleBar(RequestedTheme);
