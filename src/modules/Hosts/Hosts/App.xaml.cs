@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.IO.Abstractions;
+using System.Threading;
+using Common.UI;
+using Hosts.Helpers;
 using HostsUILib;
+using HostsUILib.Helpers;
+using HostsUILib.Settings;
+using HostsUILib.ViewModels;
+using ManagedCommon;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using static HostsUILib.Settings.IUserSettings;
+using Host = Hosts.Helpers.Host;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,6 +29,53 @@ public partial class App : Application
     /// </summary>
     public App()
     {
+        Host.HostInstance = Microsoft.Extensions.Hosting.Host.
+              CreateDefaultBuilder().
+              UseContentRoot(AppContext.BaseDirectory).
+              ConfigureServices((context, services) =>
+              {
+                  // Core Services
+                  services.AddSingleton<IFileSystem, FileSystem>();
+                  services.AddSingleton<IHostsService, HostsService>();
+                  services.AddSingleton<IUserSettings, Hosts.Settings.UserSettings>();
+                  services.AddSingleton<IElevationHelper, ElevationHelper>();
+                  services.AddSingleton<IDuplicateService, DuplicateService>();
+
+                  // Views and ViewModels
+                  services.AddSingleton<ILogger, LoggerWrapper>();
+                  services.AddSingleton<IElevationHelper, ElevationHelper>();
+                  services.AddSingleton<OpenSettingsFunction>(() =>
+                  {
+                      SettingsDeepLink.OpenSettings(SettingsDeepLink.SettingsWindow.Hosts, true);
+                  });
+
+                  services.AddSingleton<MainViewModel, MainViewModel>();
+                  services.AddSingleton<HostsMainPage, HostsMainPage>();
+              }).
+              Build();
+
+        var cleanupBackupThread = new Thread(() =>
+        {
+            // Delete old backups only if running elevated
+            if (!Host.GetService<IElevationHelper>().IsElevated)
+            {
+                return;
+            }
+
+            try
+            {
+                Host.GetService<IHostsService>().CleanupBackup();
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Failed to delete backup", ex);
+            }
+        });
+
+        cleanupBackupThread.IsBackground = true;
+        cleanupBackupThread.Start();
+
+
         this.InitializeComponent();
     }
 

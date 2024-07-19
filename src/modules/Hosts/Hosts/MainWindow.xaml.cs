@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Hosts.Helpers;
 using HostsUILib;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -13,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -21,17 +23,29 @@ namespace Hosts;
 /// <summary>
 /// An empty window that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class MainWindow : Window
+public sealed partial class MainWindow : WindowEx
 {
+    private HostsMainPage MainPage
+    {
+        get;
+    }
+
     public MainWindow()
     {
         this.InitializeComponent();
 
-        MainFrame.Navigate(typeof(HostsMainPage));
+        //MainFrame.Navigate(typeof(HostsMainPage));
+        MainPage = Host.GetService<HostsMainPage>();
     }
 
     private void myButton_Click(object sender, RoutedEventArgs e)
     {
-        myButton.Content = "Clicked";
+        //myButton.Content = "Clicked";
+    }
+
+    private void Grid_Loaded(object sender, RoutedEventArgs e)
+    {
+        MainGrid.Children.Add(MainPage);
+        Grid.SetRow(MainPage, 1);
     }
 }

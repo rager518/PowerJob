@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagedCommon", "common\Man
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "settings-ui", "settings-ui", "{54B18A1D-5BE4-4319-9358-D8ED9046941A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settings.UI.Library", "settings-ui\Settings.UI.Library\Settings.UI.Library.csproj", "{4A26A2AD-2050-4F92-9B35-47061EB02ACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Settings.UI.Library", "settings-ui\Settings.UI.Library\Settings.UI.Library.csproj", "{4A26A2AD-2050-4F92-9B35-47061EB02ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedTelemetry", "common\ManagedTelemetry\ManagedTelemetry.csproj", "{192BF5DA-1944-4390-B8F4-9128D8E86F39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagedTelemetry", "common\ManagedTelemetry\ManagedTelemetry.csproj", "{192BF5DA-1944-4390-B8F4-9128D8E86F39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.UI", "common\Common.UI\Common.UI.csproj", "{5186EAC0-58A5-4105-9454-0D42659F6332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -246,6 +248,26 @@ Global
 		{192BF5DA-1944-4390-B8F4-9128D8E86F39}.Release|x64.Build.0 = Release|Any CPU
 		{192BF5DA-1944-4390-B8F4-9128D8E86F39}.Release|x86.ActiveCfg = Release|Any CPU
 		{192BF5DA-1944-4390-B8F4-9128D8E86F39}.Release|x86.Build.0 = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|ARM.Build.0 = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|arm64.Build.0 = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|x64.Build.0 = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Debug|x86.Build.0 = Debug|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|ARM.Build.0 = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|arm64.ActiveCfg = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|arm64.Build.0 = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|x64.ActiveCfg = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|x64.Build.0 = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|x86.ActiveCfg = Release|Any CPU
+		{5186EAC0-58A5-4105-9454-0D42659F6332}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -261,6 +283,7 @@ Global
 		{D8F81F28-17BE-4D8C-BB16-58A058DD1803} = {04B64439-8D6D-408B-8611-F4C38EB376BE}
 		{4A26A2AD-2050-4F92-9B35-47061EB02ACC} = {54B18A1D-5BE4-4319-9358-D8ED9046941A}
 		{192BF5DA-1944-4390-B8F4-9128D8E86F39} = {04B64439-8D6D-408B-8611-F4C38EB376BE}
+		{5186EAC0-58A5-4105-9454-0D42659F6332} = {04B64439-8D6D-408B-8611-F4C38EB376BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D5F12A8-078E-4244-88B6-F4B3B4155A40}
