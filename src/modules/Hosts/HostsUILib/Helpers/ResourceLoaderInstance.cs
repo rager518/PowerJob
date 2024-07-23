@@ -10,6 +10,6 @@ internal static class ResourceLoaderInstance
 
     static ResourceLoaderInstance()
     {
-        ResourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader("PowerToys.HostsUILib.pri", "PowerToys.HostsUILib/Resources");
+        ResourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader("PowerJob.HostsUILib.pri", "PowerJob.HostsUILib/Resources");
     }
 }

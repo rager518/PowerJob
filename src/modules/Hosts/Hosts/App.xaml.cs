@@ -75,8 +75,9 @@ public partial class App : Application
         cleanupBackupThread.IsBackground = true;
         cleanupBackupThread.Start();
 
+        UnhandledException += App_UnhandledException;
 
-        this.InitializeComponent();
+        //this.InitializeComponent();
     }
 
     /// <summary>
@@ -90,4 +91,9 @@ public partial class App : Application
     }
 
     private Window m_window;
+    private void App_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
+    {
+        Logger.LogError("Unhandled exception", e.Exception);
+    }
+
 }

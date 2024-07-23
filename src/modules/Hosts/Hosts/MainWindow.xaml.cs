@@ -32,7 +32,7 @@ public sealed partial class MainWindow : WindowEx
 
     public MainWindow()
     {
-        this.InitializeComponent();
+        InitializeComponent();
 
         //MainFrame.Navigate(typeof(HostsMainPage));
         MainPage = Host.GetService<HostsMainPage>();
