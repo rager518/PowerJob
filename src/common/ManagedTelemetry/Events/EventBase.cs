@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManagedTelemetry.Events;
+namespace Microsoft.PowerJob.Telemetry.Events;
 
 [EventData]
 public class EventBase

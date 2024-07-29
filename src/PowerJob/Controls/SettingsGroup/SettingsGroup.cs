@@ -17,6 +17,9 @@ public partial class SettingsGroup : ItemsControl
     public SettingsGroup()
     {
         DefaultStyleKey = typeof(SettingsGroup);
+
+        //_settingsGroup = new SettingsGroup();
+        //_descriptionPresenter = new ContentPresenter();
     }
 
     [Localizable(true)]

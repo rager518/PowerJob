@@ -4,8 +4,8 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ManagedTelemetry;
-using ManagedTelemetry.Events;
+using Microsoft.PowerJob.Telemetry;
+using Microsoft.PowerJob.Telemetry.Events;
 
 namespace Hosts.Telemetry;
 

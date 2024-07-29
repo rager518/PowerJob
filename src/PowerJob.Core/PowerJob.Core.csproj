@@ -6,18 +6,35 @@
     <Platforms>x86;x64;arm64;AnyCPU</Platforms>
     <ImplicitUsings>enable</ImplicitUsings>
     <PlatformTarget>x64</PlatformTarget>
+    <EnableNETAnalyzers>False</EnableNETAnalyzers>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Attributes\CmdConfigureIgnoreAttribute.cs" />
+    <Compile Remove="EnabledModules.cs" />
+    <Compile Remove="Settings\BasePTModuleSettings.cs" />
+    <Compile Remove="Settings\GeneralSettings.cs" />
+    <Compile Remove="Settings\HostsProperties.cs" />
+    <Compile Remove="Settings\HostsSettings.cs" />
+    <Compile Remove="Settings\ISettingsRepository.cs" />
+    <Compile Remove="Settings\ISettingsUtils.cs" />
+    <Compile Remove="Settings\SettingPath.cs" />
+    <Compile Remove="Settings\SettingsBackupAndRestoreUtils.cs" />
+    <Compile Remove="Settings\SettingsRepository.cs" />
+    <Compile Remove="Settings\SettingsUtils.cs" />
+  </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Attributes\" />
     <Folder Include="Models\" />
+    <Folder Include="Settings\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    <PackageReference Include="System.IO.Abstractions" Version="21.0.22" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.IO.Abstractions" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PowerJob.interop\PowerJob.interop.vcxproj" />
+    <ProjectReference Include="..\common\interop\PowerJob.interop.vcxproj" />
   </ItemGroup>
 </Project>

@@ -1,17 +1,19 @@
 ﻿using System.Runtime.CompilerServices;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.VisualBasic;
 using PowerJob.Commands;
-using PowerJob.Core.Settings;
-using Windows.System;
+using interop;
+using Settings.UI.Library;
+using Settings.UI.Library.Interfaces;
 
 namespace PowerJob.ViewModels;
 
 public partial class PowerStartupViewModel : ObservableRecipient
 {
-    public PowerStartupViewModel()
-    {
-    }
+    //public PowerStartupViewModel()
+    //{
+    //    Settings = new HostsSettings();
+    //    GeneralSettingsConfig = new GeneralSettings();
+    //}
 
     public PowerStartupViewModel(ISettingsUtils settingsUtils, ISettingsRepository<GeneralSettings> settingsRepository, ISettingsRepository<HostsSettings> moduleSettingsRepository, Func<string, int> ipcMSGCallBackFunc, bool isElevated)
     {
@@ -55,10 +57,9 @@ public partial class PowerStartupViewModel : ObservableRecipient
 
     public void Launch()
     {
-        string eventName = "";
-        //string eventName = !_isElevated && LaunchAdministrator
-        //    ? Constants.ShowHostsAdminSharedEvent()
-        //    : Constants.ShowHostsSharedEvent();
+        string eventName = !_isElevated && LaunchAdministrator
+            ? Constants.ShowHostsAdminSharedEvent()
+            : Constants.ShowHostsSharedEvent();
 
         using (var eventHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
         {
@@ -108,7 +109,7 @@ public partial class PowerStartupViewModel : ObservableRecipient
         get => Settings.Properties.ShowStartupWarning;
         set
         {
-            if(value!= Settings.Properties.ShowStartupWarning)
+            if (value != Settings.Properties.ShowStartupWarning)
             {
                 Settings.Properties.ShowStartupWarning = value;
                 NotifyPropertyChanged();
@@ -135,7 +136,7 @@ public partial class PowerStartupViewModel : ObservableRecipient
         set => _linePosition = value;
     }
 
-    public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
+    public void NotifyPropertyChanged([CallerMemberName] string? propertyName = null)
     {
         OnPropertyChanged(propertyName);
         SettingsUtils.SaveSettings(Settings.ToJsonString(), HostsSettings.ModuleName);

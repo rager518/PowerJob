@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Controls;
-using PowerJob.Core.Settings;
 using PowerJob.ViewModels;
+using Settings.UI.Library;
 
 namespace PowerJob.Views;
 
