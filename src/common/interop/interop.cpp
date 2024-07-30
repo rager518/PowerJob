@@ -152,7 +152,7 @@ namespace interop
 			//	for (UINT32 i = 0; i < vcdl.Count(); ++i)
 			//	{
 			//		auto name = gcnew String(vcdl.GetDeviceName(i).data());
-			//		if (name != L"PowerToys VideoConference Mute")
+			//		if (name != L"PowerJob VideoConference Mute")
 			//		{
 			//			names->Add(name);
 			//		}
@@ -169,8 +169,8 @@ namespace interop
 
 		static String^ AppDataPath() {
 			auto localPath = Environment::GetFolderPath(Environment::SpecialFolder::LocalApplicationData);
-			auto powerToysPath = gcnew String(CommonSharedConstants::APPDATA_PATH);
-			return System::IO::Path::Combine(localPath, powerToysPath);
+			auto powerJobPath = gcnew String(CommonSharedConstants::APPDATA_PATH);
+			return System::IO::Path::Combine(localPath, powerJobPath);
 		}
 
 		static String^ PowerLauncherSharedEvent() {

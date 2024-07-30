@@ -18,7 +18,7 @@ namespace Settings.UI.Library
 {
     public class GeneralSettings : ISettingsConfig
     {
-        // Gets or sets a value indicating whether run powertoys on start-up.
+        // Gets or sets a value indicating whether run PowerJob on start-up.
         [JsonPropertyName("startup")]
         public bool Startup { get; set; }
 
@@ -27,7 +27,7 @@ namespace Settings.UI.Library
         [JsonPropertyName("is_elevated")]
         public bool IsElevated { get; set; }
 
-        // Gets or sets a value indicating whether powertoys should run elevated.
+        // Gets or sets a value indicating whether PowerJob should run elevated.
         [JsonPropertyName("run_elevated")]
         [CmdConfigureIgnoreAttribute]
         public bool RunElevated { get; set; }
@@ -50,10 +50,10 @@ namespace Settings.UI.Library
         [CmdConfigureIgnore]
         public string SystemTheme { get; set; }
 
-        // Gets or sets powertoys version number.
-        [JsonPropertyName("powertoys_version")]
+        // Gets or sets PowerJob version number.
+        [JsonPropertyName("PowerJob_version")]
         [CmdConfigureIgnore]
-        public string PowertoysVersion { get; set; }
+        public string PowerJobVersion { get; set; }
 
         [JsonPropertyName("action_name")]
         [CmdConfigureIgnore]
@@ -88,12 +88,12 @@ namespace Settings.UI.Library
             SystemTheme = "light";
             try
             {
-                PowertoysVersion = DefaultPowertoysVersion();
+                PowerJobVersion = DefaultPowerJobVersion();
             }
             catch (Exception e)
             {
-                Logger.LogError("Exception encountered when getting PowerToys version", e);
-                PowertoysVersion = "v0.0.0";
+                Logger.LogError("Exception encountered when getting PowerJob version", e);
+                PowerJobVersion = "v0.0.0";
             }
 
             Enabled = new EnabledModules();
@@ -106,7 +106,7 @@ namespace Settings.UI.Library
             return JsonSerializer.Serialize(this);
         }
 
-        private static string DefaultPowertoysVersion()
+        private static string DefaultPowerJobVersion()
         {
             return interop.CommonManaged.GetProductVersion();
         }
@@ -123,10 +123,10 @@ namespace Settings.UI.Library
         {
             try
             {
-                if (Helper.CompareVersions(PowertoysVersion, Helper.GetProductVersion()) != 0)
+                if (Helper.CompareVersions(PowerJobVersion, Helper.GetProductVersion()) != 0)
                 {
                     // Update settings
-                    PowertoysVersion = Helper.GetProductVersion();
+                    PowerJobVersion = Helper.GetProductVersion();
                     return true;
                 }
             }

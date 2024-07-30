@@ -16,7 +16,7 @@ public abstract class BasePTModuleSettings
         get; set;
     }
 
-    // Gets or sets the powertoys version.
+    // Gets or sets the PowerJob version.
     [JsonPropertyName("version")]
     public string Version
     {

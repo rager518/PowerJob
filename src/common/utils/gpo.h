@@ -3,7 +3,7 @@
 #include <Windows.h>
 #include <optional>
 
-namespace powertoys_gpo {
+namespace PowerJob_gpo {
     enum gpo_rule_configured_t {
         gpo_rule_configured_wrong_value = -3, // The policy is set to an unrecognized value
         gpo_rule_configured_unavailable = -2, // Couldn't access registry
@@ -13,14 +13,14 @@ namespace powertoys_gpo {
     };
 
     // Registry path where gpo policy values are stored.
-    const std::wstring POLICIES_PATH = L"SOFTWARE\\Policies\\PowerToys";
+    const std::wstring POLICIES_PATH = L"SOFTWARE\\Policies\\PowerJob";
     const std::wstring POWER_LAUNCHER_INDIVIDUAL_PLUGIN_ENABLED_LIST_PATH = POLICIES_PATH + L"\\PowerLauncherIndividualPluginEnabledList";
 
     // Registry scope where gpo policy values are stored.
     const HKEY POLICIES_SCOPE_MACHINE = HKEY_LOCAL_MACHINE;
     const HKEY POLICIES_SCOPE_USER = HKEY_CURRENT_USER;
 
-    // The registry value names for PowerToys utilities enabled and disabled policies.
+    // The registry value names for PowerJob utilities enabled and disabled policies.
     const std::wstring POLICY_CONFIGURE_ENABLED_GLOBAL_ALL_UTILITIES = L"ConfigureGlobalUtilityEnabledState";
     const std::wstring POLICY_CONFIGURE_ENABLED_ALWAYS_ON_TOP = L"ConfigureEnabledUtilityAlwaysOnTop";
     const std::wstring POLICY_CONFIGURE_ENABLED_AWAKE = L"ConfigureEnabledUtilityAwake";
@@ -60,17 +60,17 @@ namespace powertoys_gpo {
     const std::wstring POLICY_CONFIGURE_ENABLED_QOI_PREVIEW = L"ConfigureEnabledUtilityFileExplorerQOIPreview";
     const std::wstring POLICY_CONFIGURE_ENABLED_QOI_THUMBNAILS = L"ConfigureEnabledUtilityFileExplorerQOIThumbnails";
 
-    // The registry value names for PowerToys installer and update policies.
+    // The registry value names for PowerJob installer and update policies.
     const std::wstring POLICY_DISABLE_PER_USER_INSTALLATION = L"PerUserInstallationDisabled";
     const std::wstring POLICY_DISABLE_AUTOMATIC_UPDATE_DOWNLOAD = L"AutomaticUpdateDownloadDisabled";
     const std::wstring POLICY_SUSPEND_NEW_UPDATE_TOAST = L"SuspendNewUpdateAvailableToast";
     const std::wstring POLICY_DISABLE_NEW_UPDATE_TOAST = L"DisableNewUpdateAvailableToast";
     const std::wstring POLICY_DISABLE_SHOW_WHATS_NEW_AFTER_UPDATES = L"DoNotShowWhatsNewAfterUpdates";
 
-    // The registry value names for other PowerToys policies.
+    // The registry value names for other PowerJob policies.
     const std::wstring POLICY_ALLOW_EXPERIMENTATION = L"AllowExperimentation";
     const std::wstring POLICY_CONFIGURE_ENABLED_POWER_LAUNCHER_ALL_PLUGINS = L"PowerLauncherAllPluginsEnabledState";
-    const std::wstring POLICY_ALLOW_ADVANCED_PASTE_ONLINE_AI_MODELS = L"AllowPowerToysAdvancedPasteOnlineAIModels";
+    const std::wstring POLICY_ALLOW_ADVANCED_PASTE_ONLINE_AI_MODELS = L"AllowPowerJobAdvancedPasteOnlineAIModels";
 
     inline std::optional<std::wstring> readRegistryStringValue(HKEY hRootKey, const std::wstring& subKey, const std::wstring& value_name)
     {

@@ -403,7 +403,7 @@ inline std::optional<ProcessInfo> RunNonElevatedFailsafe(const std::wstring& fil
     if (!launched)
     {
         Logger::warn(L"RunNonElevatedEx() failed. Trying fallback");
-        std::wstring action_runner_path = get_module_folderpath() + L"\\PowerToys.ActionRunner.exe";
+        std::wstring action_runner_path = get_module_folderpath() + L"\\PowerJob.ActionRunner.exe";
         std::wstring newParams = fmt::format(L"-run-non-elevated -target \"{}\" {}", file, params);
         launched = run_non_elevated(action_runner_path, newParams, nullptr, working_dir.c_str());
         if (launched)

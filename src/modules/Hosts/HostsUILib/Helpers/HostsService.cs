@@ -17,7 +17,7 @@ using Microsoft.Win32;
 namespace HostsUILib.Helpers;
 public class HostsService : IHostsService, IDisposable
 {
-    private const string _backupSuffix = $"_PowerToysBackup_";
+    private const string _backupSuffix = $"_PowerJobBackup_";
 
     private readonly SemaphoreSlim _asyncLock = new SemaphoreSlim(1, 1);
     private readonly IFileSystem _fileSystem;

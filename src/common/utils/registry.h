@@ -18,7 +18,7 @@ namespace registry
 {
     namespace install_scope
     {
-        const wchar_t INSTALL_SCOPE_REG_KEY[] = L"Software\\Classes\\powertoys\\";
+        const wchar_t INSTALL_SCOPE_REG_KEY[] = L"Software\\Classes\\PowerJob\\";
 
         enum class InstallScope
         {
@@ -390,7 +390,7 @@ namespace registry
         inline registry::ChangeSet generatePreviewHandler(const PreviewHandlerType handlerType,
                                                           const bool perUser,
                                                           std::wstring handlerClsid,
-                                                          std::wstring powertoysVersion,
+                                                          std::wstring PowerJobVersion,
                                                           std::wstring fullPathToHandler,
                                                           std::wstring className,
                                                           std::wstring displayName,
@@ -411,20 +411,20 @@ namespace registry
             std::wstring assemblyKeyValue;
             if (const auto lastDotPos = className.rfind(L'.'); lastDotPos != std::wstring::npos)
             {
-                assemblyKeyValue = L"PowerToys." + className.substr(lastDotPos + 1);
+                assemblyKeyValue = L"PowerJob." + className.substr(lastDotPos + 1);
             }
             else
             {
-                assemblyKeyValue = L"PowerToys." + className;
+                assemblyKeyValue = L"PowerJob." + className;
             }
 
             assemblyKeyValue += L", Version=";
-            assemblyKeyValue += powertoysVersion;
+            assemblyKeyValue += PowerJobVersion;
             assemblyKeyValue += L", Culture=neutral";
 
             std::wstring versionPath = inprocServerPath;
             versionPath += L'\\';
-            versionPath += powertoysVersion;
+            versionPath += PowerJobVersion;
 
             using vec_t = std::vector<registry::ValueChange>;
             // TODO: verify that we actually need all of those

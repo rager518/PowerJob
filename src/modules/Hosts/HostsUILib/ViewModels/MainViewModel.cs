@@ -339,7 +339,7 @@ public partial class MainViewModel : ObservableObject
         }
         catch (IOException ex) when ((ex.HResult & 0x0000FFFF) == 32)
         {
-            // There are some edge cases where a big hosts file is being locked by svchost.exe https://github.com/microsoft/PowerToys/issues/28066
+            // There are some edge cases where a big hosts file is being locked by svchost.exe https://github.com/microsoft/PowerJob/issues/28066
             var resourceLoader = ResourceLoaderInstance.ResourceLoader;
             errorMessage = resourceLoader.GetString("FileSaveError_FileInUse");
         }

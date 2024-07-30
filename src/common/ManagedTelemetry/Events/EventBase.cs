@@ -36,7 +36,6 @@ public class EventBase
     private string GetVersionFromAssembly()
     {
         // For consistency this should be formatted the same way as
-        // https://github.com/microsoft/PowerToys/blob/710f92d99965109fd788d85ebf8b6b9e0ba1524a/src/common/common.cpp#L635
         var version = Assembly.GetExecutingAssembly()?.GetName()?.Version ?? new Version();
         return $"v{version.Major}.{version.Minor}.{version.Build}";
     }

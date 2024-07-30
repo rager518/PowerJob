@@ -14,7 +14,7 @@
 
 #define COMPANY_NAME "Microsoft Corporation"
 #define COPYRIGHT_NOTE "Copyright (C) Microsoft Corporation. All rights reserved."
-#define PRODUCT_NAME "PowerToys"
+#define PRODUCT_NAME "PowerJob"
 
 #include <string>
 

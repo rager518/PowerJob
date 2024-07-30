@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 
 #include "trace.h"
 #include <common/logger/logger.h>
@@ -73,7 +73,7 @@ private:
                 return FALSE;
             }
             return TRUE;
-            };
+        };
 
         EnumWindows(enum_windows, (LPARAM)m_hProcess);
     }
@@ -143,42 +143,42 @@ public:
         }
 
         m_showEventWaiter = EventWaiter(CommonSharedConstants::SHOW_HOSTS_EVENT, [&](int err)
+        {
+            if (m_enabled && err == ERROR_SUCCESS)
             {
-                if (m_enabled && err == ERROR_SUCCESS)
+                Logger::trace(L"{} event was signaled", CommonSharedConstants::SHOW_HOSTS_EVENT);
+
+                if (is_process_running())
                 {
-                    Logger::trace(L"{} event was signaled", CommonSharedConstants::SHOW_HOSTS_EVENT);
-
-                    if (is_process_running())
-                    {
-                        bring_process_to_front();
-                    }
-                    else
-                    {
-                        launch_process(false);
-                    }
-
-                    Trace::ActivateEditor();
+                    bring_process_to_front();
                 }
-            });
+                else
+                {
+                    launch_process(false);
+                }
+
+                Trace::ActivateEditor();
+            }
+        });
 
         m_showAdminEventWaiter = EventWaiter(CommonSharedConstants::SHOW_HOSTS_ADMIN_EVENT, [&](int err)
+        {
+            if (m_enabled && err == ERROR_SUCCESS)
             {
-                if (m_enabled && err == ERROR_SUCCESS)
+                Logger::trace(L"{} event was signaled", CommonSharedConstants::SHOW_HOSTS_ADMIN_EVENT);
+                
+                if (is_process_running())
                 {
-                    Logger::trace(L"{} event was signaled", CommonSharedConstants::SHOW_HOSTS_ADMIN_EVENT);
-
-                    if (is_process_running())
-                    {
-                        bring_process_to_front();
-                    }
-                    else
-                    {
-                        launch_process(true);
-                    }
-
-                    Trace::ActivateEditor();
+                    bring_process_to_front();
                 }
-            });
+                else
+                {
+                    launch_process(true);
+                }
+
+                Trace::ActivateEditor();
+            }
+        });
     }
 
     ~HostsModuleInterface()
@@ -219,9 +219,9 @@ public:
     }
 
     // Return the configured status for the gpo policy for the module
-    virtual powertoys_gpo::gpo_rule_configured_t gpo_policy_enabled_configuration() override
+    virtual PowerJob_gpo::gpo_rule_configured_t gpo_policy_enabled_configuration() override
     {
-        return powertoys_gpo::getConfiguredHostsFileEditorEnabledValue();
+        return PowerJob_gpo::getConfiguredHostsFileEditorEnabledValue();
     }
 
     virtual bool get_config(wchar_t* /*buffer*/, int* /*buffer_size*/) override

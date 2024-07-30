@@ -8,19 +8,19 @@ using Microsoft.PowerJob.Telemetry.Events;
 namespace Microsoft.PowerJob.Telemetry
 {
     /// <summary>
-    /// Telemetry helper class for PowerToys.
+    /// Telemetry helper class for PowerJob.
     /// </summary>
-    public class PowerToysTelemetry : TelemetryBase
+    public class PowerJobTelemetry : TelemetryBase
     {
         /// <summary>
         /// Name for ETW event.
         /// </summary>
-        private const string EventSourceName = "Microsoft.PowerToys";
+        private const string EventSourceName = "Microsoft.PowerJob";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PowerToysTelemetry"/> class.
+        /// Initializes a new instance of the <see cref="PowerJobTelemetry"/> class.
         /// </summary>
-        public PowerToysTelemetry()
+        public PowerJobTelemetry()
             : base(EventSourceName)
         {
         }
@@ -28,7 +28,7 @@ namespace Microsoft.PowerJob.Telemetry
         /// <summary>
         /// Gets an instance of the <see cref="PowerLauncherTelemetry"/> class.
         /// </summary>
-        public static PowerToysTelemetry Log { get; } = new PowerToysTelemetry();
+        public static PowerJobTelemetry Log { get; } = new PowerJobTelemetry();
 
         /// <summary>
         /// Publishes ETW event when an action is triggered on

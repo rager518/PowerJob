@@ -91,7 +91,7 @@ namespace Settings.UI.Library
             }
         }
 
-        private bool videoConference; // defaulting to off https://github.com/microsoft/PowerToys/issues/14507
+        private bool videoConference; // defaulting to off https://github.com/microsoft/PowerJob/issues/14507
 
         [JsonPropertyName("Video Conference")]
         public bool VideoConference
@@ -140,7 +140,7 @@ namespace Settings.UI.Library
 
         private bool powerLauncher = true;
 
-        [JsonPropertyName("PowerToys Run")]
+        [JsonPropertyName("PowerJob Run")]
         public bool PowerLauncher
         {
             get => powerLauncher;
@@ -483,7 +483,7 @@ namespace Settings.UI.Library
                 Value = value,
                 Name = moduleName,
             };
-            PowerToysTelemetry.Log.WriteEvent(dataEvent);
+            PowerJobTelemetry.Log.WriteEvent(dataEvent);
         }
 
         internal void AddEnabledModuleChangeNotification(Action callBack)

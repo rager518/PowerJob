@@ -28,7 +28,7 @@ public static class Logger
     {
         if (isLocalLow)
         {
-            applicationLogPath = Environment.GetEnvironmentVariable("userprofile") + "\\appdata\\LocalLow\\Microsoft\\PowerToys" + applicationLogPath + "\\" + Version;
+            applicationLogPath = Environment.GetEnvironmentVariable("userprofile") + "\\appdata\\LocalLow\\Microsoft\\PowerJob" + applicationLogPath + "\\" + Version;
         }
         else
         {

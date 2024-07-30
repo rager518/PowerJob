@@ -32,7 +32,7 @@ inline registry::ChangeSet getSvgPreviewHandlerChangeSet(const std::wstring inst
                                   L"{FCDD4EED-41AA-492F-8A84-31A1546226E0}",
                                   get_std_product_version(),
                                   (fs::path{ installationDir } /
-                                   LR"d(PowerToys.SvgPreviewHandlerCpp.dll)d")
+                                   LR"d(PowerJob.SvgPreviewHandlerCpp.dll)d")
                                       .wstring(),
                                   L"SvgPreviewHandler",
                                   L"Svg Preview Handler",
@@ -46,7 +46,7 @@ inline registry::ChangeSet getMdPreviewHandlerChangeSet(const std::wstring insta
                                   perUser,
                                   L"{60789D87-9C3C-44AF-B18C-3DE2C2820ED3}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.MarkdownPreviewHandlerCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.MarkdownPreviewHandlerCpp.dll)d").wstring(),
                                   L"MarkdownPreviewHandler",
                                   L"Markdown Preview Handler",
                                   NonLocalizable::ExtMarkdown);
@@ -114,7 +114,7 @@ inline registry::ChangeSet getMonacoPreviewHandlerChangeSet(const std::wstring i
                                   perUser,
                                   L"{D8034CFA-F34B-41FE-AD45-62FCBB52A6DA}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.MonacoPreviewHandlerCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.MonacoPreviewHandlerCpp.dll)d").wstring(),
                                   L"MonacoPreviewHandler",
                                   L"Monaco Preview Handler",
                                   extensions);
@@ -127,7 +127,7 @@ inline registry::ChangeSet getPdfPreviewHandlerChangeSet(const std::wstring inst
                                   perUser,
                                   L"{A5A41CC7-02CB-41D4-8C9B-9087040D6098}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.PdfPreviewHandlerCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.PdfPreviewHandlerCpp.dll)d").wstring(),
                                   L"PdfPreviewHandler",
                                   L"Pdf Preview Handler",
                                   NonLocalizable::ExtPDF);
@@ -140,7 +140,7 @@ inline registry::ChangeSet getGcodePreviewHandlerChangeSet(const std::wstring in
                                   perUser,
                                   L"{A0257634-8812-4CE8-AF11-FA69ACAEAFAE}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.GcodePreviewHandlerCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.GcodePreviewHandlerCpp.dll)d").wstring(),
                                   L"GcodePreviewHandler",
                                   L"G-code Preview Handler",
                                   NonLocalizable::ExtGCode);
@@ -153,7 +153,7 @@ inline registry::ChangeSet getQoiPreviewHandlerChangeSet(const std::wstring inst
                                   perUser,
                                   L"{729B72CD-B72E-4FE9-BCBF-E954B33FE699}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.QoiPreviewHandlerCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.QoiPreviewHandlerCpp.dll)d").wstring(),
                                   L"QoiPreviewHandler",
                                   L"Qoi Preview Handler",
                                   NonLocalizable::ExtQOI);
@@ -166,7 +166,7 @@ inline registry::ChangeSet getSvgThumbnailHandlerChangeSet(const std::wstring in
                                   perUser,
                                   L"{10144713-1526-46C9-88DA-1FB52807A9FF}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.SvgThumbnailProviderCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.SvgThumbnailProviderCpp.dll)d").wstring(),
                                   L"SvgThumbnailProvider",
                                   L"Svg Thumbnail Provider",
                                   NonLocalizable::ExtSVG,
@@ -181,7 +181,7 @@ inline registry::ChangeSet getPdfThumbnailHandlerChangeSet(const std::wstring in
                                   perUser,
                                   L"{D8BB9942-93BD-412D-87E4-33FAB214DC1A}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.PdfThumbnailProviderCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.PdfThumbnailProviderCpp.dll)d").wstring(),
                                   L"PdfThumbnailProvider",
                                   L"Pdf Thumbnail Provider",
                                   NonLocalizable::ExtPDF);
@@ -194,7 +194,7 @@ inline registry::ChangeSet getGcodeThumbnailHandlerChangeSet(const std::wstring 
                                   perUser,
                                   L"{F2847CBE-CD03-4C83-A359-1A8052C1B9D5}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.GcodeThumbnailProviderCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.GcodeThumbnailProviderCpp.dll)d").wstring(),
                                   L"GcodeThumbnailProvider",
                                   L"G-code Thumbnail Provider",
                                   NonLocalizable::ExtGCode);
@@ -207,7 +207,7 @@ inline registry::ChangeSet getStlThumbnailHandlerChangeSet(const std::wstring in
                                   perUser,
                                   L"{77257004-6F25-4521-B602-50ECC6EC62A6}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.StlThumbnailProviderCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.StlThumbnailProviderCpp.dll)d").wstring(),
                                   L"StlThumbnailProvider",
                                   L"Stl Thumbnail Provider",
                                   NonLocalizable::ExtSTL);
@@ -220,7 +220,7 @@ inline registry::ChangeSet getQoiThumbnailHandlerChangeSet(const std::wstring in
                                   perUser,
                                   L"{AD856B15-D25E-4008-AFB7-AFAA55586188}",
                                   get_std_product_version(),
-                                  (fs::path{ installationDir } / LR"d(PowerToys.QoiThumbnailProviderCpp.dll)d").wstring(),
+                                  (fs::path{ installationDir } / LR"d(PowerJob.QoiThumbnailProviderCpp.dll)d").wstring(),
                                   L"QoiThumbnailProvider",
                                   L"Qoi Thumbnail Provider",
                                   NonLocalizable::ExtQOI,
@@ -236,10 +236,10 @@ inline registry::ChangeSet getRegistryPreviewSetDefaultAppChangeSet(const std::w
     vec_t changes;
 
     std::wstring appName = L"Registry Preview";
-    std::wstring fullAppName = L"PowerToys.RegistryPreview";
+    std::wstring fullAppName = L"PowerJob.RegistryPreview";
     std::wstring registryKeyPrefix = L"Software\\Classes\\";
 
-    std::wstring appPath = installationDir + L"\\WinUI3Apps\\PowerToys.RegistryPreview.exe";
+    std::wstring appPath = installationDir + L"\\WinUI3Apps\\PowerJob.RegistryPreview.exe";
     std::wstring command = appPath + L" \"----ms-protocol:ms-encodedlaunch:App?ContractId=Windows.File&Verb=open&File=%1\"";
 
     changes.push_back({ scope, registryKeyPrefix + fullAppName + L"\\" + L"Application", L"ApplicationName", appName });
@@ -258,7 +258,7 @@ inline registry::ChangeSet getRegistryPreviewChangeSet(const std::wstring instal
     vec_t changes;
 
     std::wstring command = installationDir;
-    command.append(L"\\WinUI3Apps\\PowerToys.RegistryPreview.exe \"%1\"");
+    command.append(L"\\WinUI3Apps\\PowerJob.RegistryPreview.exe \"%1\"");
     changes.push_back({ scope, L"Software\\Classes\\regfile\\shell\\preview\\command", std::nullopt, command });
 
     std::wstring icon_path = installationDir;

@@ -13,7 +13,7 @@ namespace // Strings in this namespace should not be localized
 {
     const inline wchar_t POWER_TOYS_UPGRADE_CODE[] = L"{42B84BF7-5FBF-473B-9C8B-049DC16F7708}";
     const inline wchar_t POWER_TOYS_UPGRADE_CODE_USER[] = L"{D8B559DB-4C98-487A-A33F-50A8EEE42726}";
-    const inline wchar_t POWERTOYS_EXE_COMPONENT[] = L"{A2C66D91-3485-4D00-B04D-91844E6B345B}";
+    const inline wchar_t PowerJob_EXE_COMPONENT[] = L"{A2C66D91-3485-4D00-B04D-91844E6B345B}";
 }
 
 std::optional<std::wstring> GetMsiPackageInstalledPath(bool perUser)
@@ -54,7 +54,7 @@ std::optional<std::wstring> GetMsiPackageInstalledPath(bool perUser)
 
     wchar_t path[MAX_PATH];
     DWORD path_size = MAX_PATH;
-    MsiGetComponentPathW(product_ID, POWERTOYS_EXE_COMPONENT, path, &path_size);
+    MsiGetComponentPathW(product_ID, PowerJob_EXE_COMPONENT, path, &path_size);
     if (!path_size)
     {
         return std::nullopt;

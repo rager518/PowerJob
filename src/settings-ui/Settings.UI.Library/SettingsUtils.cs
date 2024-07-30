@@ -80,7 +80,7 @@ public class SettingsUtils : ISettingsUtils
         }
 
         // Catch json deserialization exceptions when the file is corrupt and has an invalid json.
-        // If there are any deserialization issues like in https://github.com/microsoft/PowerToys/issues/7500, log the error and create a new settings.json file.
+        // If there are any deserialization issues like in https://github.com/microsoft/PowerJob/issues/7500, log the error and create a new settings.json file.
         // This is different from the case where we have trailing zeros following a valid json file, which we have handled by trimming the trailing zeros.
         catch (JsonException ex)
         {
@@ -112,7 +112,7 @@ public class SettingsUtils : ISettingsUtils
         }
 
         // Catch json deserialization exceptions when the file is corrupt and has an invalid json.
-        // If there are any deserialization issues like in https://github.com/microsoft/PowerToys/issues/7500, log the error and create a new settings.json file.
+        // If there are any deserialization issues like in https://github.com/microsoft/PowerJob/issues/7500, log the error and create a new settings.json file.
         // This is different from the case where we have trailing zeros following a valid json file, which we have handled by trimming the trailing zeros.
         catch (JsonException ex)
         {
@@ -147,7 +147,7 @@ public class SettingsUtils : ISettingsUtils
     private T GetFile<T>(string powertoyFolderName = DefaultModuleName, string fileName = DefaultFileName)
     {
         // Adding Trim('\0') to overcome possible NTFS file corruption.
-        // Look at issue https://github.com/microsoft/PowerToys/issues/6413 you'll see the file has a large sum of \0 to fill up a 4096 byte buffer for writing to disk
+        // Look at issue https://github.com/microsoft/PowerJob/issues/6413 you'll see the file has a large sum of \0 to fill up a 4096 byte buffer for writing to disk
         // This, while not totally ideal, does work around the problem by trimming the end.
         // The file itself did write the content correctly but something is off with the actual end of the file, hence the 0x00 bug
         var jsonSettingsString = _file.ReadAllText(_settingsPath.GetSettingsPath(powertoyFolderName, fileName)).Trim('\0');

@@ -10,18 +10,18 @@ namespace CommonSharedConstants
     // Fake key code to represent VK_WIN.
     inline const DWORD VK_WIN_BOTH = 0x104;
 
-    const wchar_t APPDATA_PATH[] = L"Microsoft\\PowerToys";
+    const wchar_t APPDATA_PATH[] = L"Microsoft\\PowerJob";
 
     // Path to the event used by PowerLauncher
-    const wchar_t POWER_LAUNCHER_SHARED_EVENT[] = L"Local\\PowerToysRunInvokeEvent-30f26ad7-d36d-4c0e-ab02-68bb5ff3c4ab";
+    const wchar_t POWER_LAUNCHER_SHARED_EVENT[] = L"Local\\PowerJobRunInvokeEvent-30f26ad7-d36d-4c0e-ab02-68bb5ff3c4ab";
 
-    const wchar_t POWER_LAUNCHER_CENTRALIZED_HOOK_SHARED_EVENT[] = L"Local\\PowerToysRunCentralizedHookInvokeEvent-30f26ad7-d36d-4c0e-ab02-68bb5ff3c4ab";
+    const wchar_t POWER_LAUNCHER_CENTRALIZED_HOOK_SHARED_EVENT[] = L"Local\\PowerJobRunCentralizedHookInvokeEvent-30f26ad7-d36d-4c0e-ab02-68bb5ff3c4ab";
 
-    const wchar_t RUN_SEND_SETTINGS_TELEMETRY_EVENT[] = L"Local\\PowerToysRunInvokeEvent-638ec522-0018-4b96-837d-6bd88e06f0d6";
+    const wchar_t RUN_SEND_SETTINGS_TELEMETRY_EVENT[] = L"Local\\PowerJobRunInvokeEvent-638ec522-0018-4b96-837d-6bd88e06f0d6";
 
-    const wchar_t RUN_EXIT_EVENT[] = L"Local\\PowerToysRunExitEvent-3e38e49d-a762-4ef1-88f2-fd4bc7481516";
+    const wchar_t RUN_EXIT_EVENT[] = L"Local\\PowerJobRunExitEvent-3e38e49d-a762-4ef1-88f2-fd4bc7481516";
 
-    const wchar_t FZE_EXIT_EVENT[] = L"Local\\PowerToys-FZE-ExitEvent-ca8c73de-a52c-4274-b691-46e9592d3b43";
+    const wchar_t FZE_EXIT_EVENT[] = L"Local\\PowerJob-FZE-ExitEvent-ca8c73de-a52c-4274-b691-46e9592d3b43";
 
     const wchar_t COLOR_PICKER_SEND_SETTINGS_TELEMETRY_EVENT[] = L"Local\\ColorPickerSettingsTelemetryEvent-6c7071d8-4014-46ec-b687-913bd8a422f1";
 
@@ -46,13 +46,13 @@ namespace CommonSharedConstants
     const wchar_t SHOW_HOSTS_ADMIN_EVENT[] = L"Local\\Hosts-ShowHostsAdminEvent-60ff44e2-efd3-43bf-928a-f4d269f98bec";
 
     // Path to the event used by Awake
-    const wchar_t AWAKE_EXIT_EVENT[] = L"Local\\PowerToysAwakeExitEvent-c0d5e305-35fc-4fb5-83ec-f6070cfaf7fe";
+    const wchar_t AWAKE_EXIT_EVENT[] = L"Local\\PowerJobAwakeExitEvent-c0d5e305-35fc-4fb5-83ec-f6070cfaf7fe";
 
     // Path to the event used by AlwaysOnTop
     const wchar_t ALWAYS_ON_TOP_PIN_EVENT[] = L"Local\\AlwaysOnTopPinEvent-892e0aa2-cfa8-4cc4-b196-ddeb32314ce8";
 
     // Path to the event used by PowerAccent
-    const wchar_t POWERACCENT_EXIT_EVENT[] = L"Local\\PowerToysPowerAccentExitEvent-53e93389-d19a-4fbb-9b36-1981c8965e17";
+    const wchar_t POWERACCENT_EXIT_EVENT[] = L"Local\\PowerJobPowerAccentExitEvent-53e93389-d19a-4fbb-9b36-1981c8965e17";
 
     // Path to the event used by PowerOCR
     const wchar_t SHOW_POWEROCR_SHARED_EVENT[] = L"Local\\PowerOCREvent-dc864e06-e1af-4ecc-9078-f98bee745e3a";
@@ -67,34 +67,34 @@ namespace CommonSharedConstants
     const wchar_t MEASURE_TOOL_TRIGGER_EVENT[] = L"Local\\MeasureToolEvent-3d46745f-09b3-4671-a577-236be7abd199";
 
     // Path to the event used by GcodePreviewHandler
-    const wchar_t GCODE_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerToysGcodePreviewResizeEvent-6ff1f9bd-ccbd-4b24-a79f-40a34fb0317d";
+    const wchar_t GCODE_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerJobGcodePreviewResizeEvent-6ff1f9bd-ccbd-4b24-a79f-40a34fb0317d";
 
     // Path to the event used by QoiPreviewHandler
-    const wchar_t QOI_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerToysQoiPreviewResizeEvent-579518d1-8c8b-494f-8143-04f43d761ead";
+    const wchar_t QOI_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerJobQoiPreviewResizeEvent-579518d1-8c8b-494f-8143-04f43d761ead";
 
     // Path to the event used by DevFilesPreviewHandler
-    const wchar_t DEV_FILES_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerToysDevFilesPreviewResizeEvent-5707a22c-2cac-4ea2-82f0-27c03ef0b5f3";
+    const wchar_t DEV_FILES_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerJobDevFilesPreviewResizeEvent-5707a22c-2cac-4ea2-82f0-27c03ef0b5f3";
 
     // Path to the event used by MarkdownPreviewHandler
-    const wchar_t MARKDOWN_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerToysMarkdownPreviewResizeEvent-54c9ab69-11f3-49e9-a98f-53221cfef3ec";
+    const wchar_t MARKDOWN_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerJobMarkdownPreviewResizeEvent-54c9ab69-11f3-49e9-a98f-53221cfef3ec";
 
     // Path to the event used by MarkdownPreviewHandler
-    const wchar_t PDF_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerToysPdfPreviewResizeEvent-5a2f162a-f728-45fe-8bda-ef3d5e434ce7";
+    const wchar_t PDF_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerJobPdfPreviewResizeEvent-5a2f162a-f728-45fe-8bda-ef3d5e434ce7";
 
     // Path to the event used by MarkdownPreviewHandler
-    const wchar_t SVG_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerToysSvgPreviewResizeEvent-0701a4fc-d5a1-4ee7-b885-f83982c62a0d";
+    const wchar_t SVG_PREVIEW_RESIZE_EVENT[] = L"Local\\PowerJobSvgPreviewResizeEvent-0701a4fc-d5a1-4ee7-b885-f83982c62a0d";
 
     // Path to the event used to show Peek
     const wchar_t SHOW_PEEK_SHARED_EVENT[] = L"Local\\ShowPeekEvent";
 
     // Path to the events used by CropAndLock
-    const wchar_t CROP_AND_LOCK_REPARENT_EVENT[] = L"Local\\PowerToysCropAndLockReparentEvent-6060860a-76a1-44e8-8d0e-6355785e9c36";
-    const wchar_t CROP_AND_LOCK_THUMBNAIL_EVENT[] = L"Local\\PowerToysCropAndLockThumbnailEvent-1637be50-da72-46b2-9220-b32b206b2434";
-    const wchar_t CROP_AND_LOCK_EXIT_EVENT[] = L"Local\\PowerToysCropAndLockExitEvent-d995d409-7b70-482b-bad6-e7c8666f375a";
+    const wchar_t CROP_AND_LOCK_REPARENT_EVENT[] = L"Local\\PowerJobCropAndLockReparentEvent-6060860a-76a1-44e8-8d0e-6355785e9c36";
+    const wchar_t CROP_AND_LOCK_THUMBNAIL_EVENT[] = L"Local\\PowerJobCropAndLockThumbnailEvent-1637be50-da72-46b2-9220-b32b206b2434";
+    const wchar_t CROP_AND_LOCK_EXIT_EVENT[] = L"Local\\PowerJobCropAndLockExitEvent-d995d409-7b70-482b-bad6-e7c8666f375a";
 
     // Path to the events used by EnvironmentVariables
-    const wchar_t SHOW_ENVIRONMENT_VARIABLES_EVENT[] = L"Local\\PowerToysEnvironmentVariables-ShowEnvironmentVariablesEvent-1021f616-e951-4d64-b231-a8f972159978";
-    const wchar_t SHOW_ENVIRONMENT_VARIABLES_ADMIN_EVENT[] = L"Local\\PowerToysEnvironmentVariables-EnvironmentVariablesAdminEvent-8c95d2ad-047c-49a2-9e8b-b4656326cfb2";
+    const wchar_t SHOW_ENVIRONMENT_VARIABLES_EVENT[] = L"Local\\PowerJobEnvironmentVariables-ShowEnvironmentVariablesEvent-1021f616-e951-4d64-b231-a8f972159978";
+    const wchar_t SHOW_ENVIRONMENT_VARIABLES_ADMIN_EVENT[] = L"Local\\PowerJobEnvironmentVariables-EnvironmentVariablesAdminEvent-8c95d2ad-047c-49a2-9e8b-b4656326cfb2";
 
     // Max DWORD for key code to disable keys.
     const DWORD VK_DISABLED = 0x100;

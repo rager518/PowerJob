@@ -90,13 +90,13 @@ public static class SettingsDeepLink
             var fullPath = new DirectoryInfo(assemblyPath).FullName;
             if (mainExecutableIsOnTheParentFolder)
             {
-                // Need to go into parent folder for PowerToys.exe. Likely a WinUI3 App SDK application.
-                fullPath = fullPath + "\\..\\PowerToys.exe";
+                // Need to go into parent folder for PowerJob.exe. Likely a WinUI3 App SDK application.
+                fullPath = fullPath + "\\..\\PowerJob.exe";
             }
             else
             {
-                // PowerToys.exe is in the same path as the application.
-                fullPath = fullPath + "\\PowerToys.exe";
+                // PowerJob.exe is in the same path as the application.
+                fullPath = fullPath + "\\PowerJob.exe";
             }
 
             Process.Start(new ProcessStartInfo(fullPath) { Arguments = "--open-settings=" + SettingsWindowNameToString(window) });

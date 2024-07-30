@@ -22,7 +22,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<_PropertySheetDisplayName>PowerToys.Root.Props</_PropertySheetDisplayName>
+		<_PropertySheetDisplayName>PowerJob.Root.Props</_PropertySheetDisplayName>
 		<ForceImportBeforeCppProps>$(MsbuildThisFileDirectory)\Cpp.Build.props</ForceImportBeforeCppProps>
 	</PropertyGroup>
 
@@ -100,7 +100,7 @@
 		<!-- Unit tests of low-priv processes, eg the preview handler tests, may log to this location. -->
 		<MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns>
 			$(MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns);
-			$(USERPROFILE)\AppData\LocalLow\Microsoft\PowerToys\**;
+			$(USERPROFILE)\AppData\LocalLow\Microsoft\PowerJob\**;
 		</MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns>
 
 		<!-- 

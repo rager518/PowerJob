@@ -227,14 +227,14 @@ public class SettingsBackupAndRestoreUtils
     {
         using (var key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\Microsoft", true))
         {
-            var ptKey = key.OpenSubKey("PowerToys", true);
+            var ptKey = key.OpenSubKey("PowerJob", true);
             if (ptKey != null)
             {
                 ptKey.SetValue(itemName, itemValue);
             }
             else
             {
-                var newPtKey = key.CreateSubKey("PowerToys");
+                var newPtKey = key.CreateSubKey("PowerJob");
                 newPtKey.SetValue(itemName, itemValue);
             }
         }
@@ -245,7 +245,7 @@ public class SettingsBackupAndRestoreUtils
     /// </summary>
     public static string GetRegSettingsBackupAndRestoreRegItem(string itemName)
     {
-        using (var key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\PowerToys"))
+        using (var key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\PowerJob"))
         {
             if (key != null)
             {
@@ -392,7 +392,7 @@ public class SettingsBackupAndRestoreUtils
         string settingsBackupAndRestoreDir = GetRegSettingsBackupAndRestoreRegItem("SettingsBackupAndRestoreDir");
         if (settingsBackupAndRestoreDir == null)
         {
-            settingsBackupAndRestoreDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PowerToys\\Backup");
+            settingsBackupAndRestoreDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PowerJob\\Backup");
         }
 
         return settingsBackupAndRestoreDir;
@@ -452,7 +452,7 @@ public class SettingsBackupAndRestoreUtils
         {
             var tempPath = Path.GetTempPath();
 
-            var fullBackupDir = Path.Combine(tempPath, "PowerToys_settings_" + latestFile.ToString(CultureInfo.InvariantCulture));
+            var fullBackupDir = Path.Combine(tempPath, "PowerJob_settings_" + latestFile.ToString(CultureInfo.InvariantCulture));
 
             lock (backupSettingsInternalLock)
             {
@@ -845,9 +845,9 @@ public class SettingsBackupAndRestoreUtils
             jsonWriter.WriteEndObject();
         }
 
-        if (settingFileKey.Equals("\\PowerToys Run\\settings.json", StringComparison.OrdinalIgnoreCase))
+        if (settingFileKey.Equals("\\PowerJob Run\\settings.json", StringComparison.OrdinalIgnoreCase))
         {
-            // PowerToys Run hack fix-up
+            // PowerJob Run hack fix-up
             var ptRunIgnoredSettings = GetPTRunIgnoredSettings(backupRestoreSettings);
             var ptrSettings = JsonNode.Parse(Encoding.UTF8.GetString(outputBuffer.WrittenSpan));
 
@@ -942,7 +942,7 @@ public class SettingsBackupAndRestoreUtils
 
             var settingsBackupFolders = Directory.GetDirectories(location, "settings_*", SearchOption.TopDirectoryOnly).ToList().Where(f => Regex.IsMatch(f, "settings_(\\d{1,19})")).ToDictionary(x => long.Parse(Path.GetFileName(x).Replace("settings_", string.Empty), CultureInfo.InvariantCulture)).ToList();
 
-            settingsBackupFolders.AddRange(Directory.GetDirectories(location, "PowerToys_settings_*", SearchOption.TopDirectoryOnly).ToList().Where(f => Regex.IsMatch(f, "PowerToys_settings_(\\d{1,19})")).ToDictionary(x => long.Parse(Path.GetFileName(x).Replace("PowerToys_settings_", string.Empty), CultureInfo.InvariantCulture)));
+            settingsBackupFolders.AddRange(Directory.GetDirectories(location, "PowerJob_settings_*", SearchOption.TopDirectoryOnly).ToList().Where(f => Regex.IsMatch(f, "PowerJob_settings_(\\d{1,19})")).ToDictionary(x => long.Parse(Path.GetFileName(x).Replace("PowerJob_settings_", string.Empty), CultureInfo.InvariantCulture)));
 
             var settingsBackupFiles = Directory.GetFiles(location, "settings_*.ptb", SearchOption.TopDirectoryOnly).ToList().Where(f => Regex.IsMatch(f, "settings_(\\d{1,19}).ptb")).ToDictionary(x => long.Parse(Path.GetFileName(x).Replace("settings_", string.Empty).Replace(".ptb", string.Empty), CultureInfo.InvariantCulture));
 
@@ -955,7 +955,7 @@ public class SettingsBackupAndRestoreUtils
             {
                 var backupTime = DateTime.FromFileTimeUtc(item.Key);
 
-                if (item.Value.Contains("PowerToys_settings_", StringComparison.OrdinalIgnoreCase))
+                if (item.Value.Contains("PowerJob_settings_", StringComparison.OrdinalIgnoreCase))
                 {
                     // this is a temp backup and we want to clean based on the time it was created in the temp place, not the time the backup was made.
                     var folderCreatedTime = new DirectoryInfo(item.Value).CreationTimeUtc;

@@ -66,13 +66,13 @@
         </controls:SettingsPageControl.ModuleContent>
 
         <controls:SettingsPageControl.PrimaryLinks>
-            <controls:PageLink x:Uid="LearnMore_Hosts" Link="https://aka.ms/PowerToysOverview_HostsFileEditor" />
+            <controls:PageLink x:Uid="LearnMore_Hosts" Link="https://aka.ms/PowerJobOverview_HostsFileEditor" />
             <controls:PageLink x:Uid="LearnMore_Hosts" Link="https://www.baidu.com" />
         </controls:SettingsPageControl.PrimaryLinks>
 
 
         <controls:SettingsPageControl.SecondaryLinks>
-            <controls:PageLink x:Uid="LearnMore_Hosts" Link="https://aka.ms/PowerToysOverview_HostsFileEditor" />
+            <controls:PageLink x:Uid="LearnMore_Hosts" Link="https://aka.ms/PowerJobOverview_HostsFileEditor" />
             <controls:PageLink x:Uid="LearnMore_Hosts" Link="https://www.baidu.com" />
         </controls:SettingsPageControl.SecondaryLinks>
     </controls:SettingsPageControl>

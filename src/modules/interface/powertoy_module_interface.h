@@ -4,12 +4,12 @@
 #include <common/utils/gpo.h>
 
 /*
-  DLL Interface for PowerToys. The powertoy_create() (see below) must return
+  DLL Interface for PowerJob. The powertoy_create() (see below) must return
   an object that implements this interface.
 
   See tools/project_template/ModuleTemplate for simple, noop, PowerToy implementation.
 
-  The PowerToys runner will, for each PowerToy DLL:
+  The PowerJob runner will, for each PowerToy DLL:
     - load the DLL,
     - call powertoy_create() to create the PowerToy.
 
@@ -73,7 +73,7 @@ public:
     virtual void enable() = 0;
     /* Disables the PowerToy, should free as much memory as possible. */
     virtual void disable() = 0;
-    /* Should return if the PowerToys is enabled or disabled. */
+    /* Should return if the PowerJob is enabled or disabled. */
     virtual bool is_enabled() = 0;
     /* Destroy the PowerToy and free all memory. */
     virtual void destroy() = 0;
@@ -120,9 +120,9 @@ public:
     virtual bool is_enabled_by_default() const { return true; }
 
     /* Provides the GPO configuration value for the module. This should be overridden by the module interface to get the proper gpo policy setting. */
-    virtual powertoys_gpo::gpo_rule_configured_t gpo_policy_enabled_configuration()
+    virtual PowerJob_gpo::gpo_rule_configured_t gpo_policy_enabled_configuration()
     {
-        return powertoys_gpo::gpo_rule_configured_not_configured;
+        return PowerJob_gpo::gpo_rule_configured_not_configured;
     }
 
     // Some actions like AdvancedPaste generate new inputs, which we don't want to catch again.
@@ -147,7 +147,7 @@ protected:
 
   extern "C" __declspec(dllexport) PowertoyModuleIface* __cdecl powertoy_create()
   
-  Called by the PowerToys runner to initialize each PowerToy.
+  Called by the PowerJob runner to initialize each PowerToy.
   It will be called only once before a call to destroy() method is made.
 
   Returned PowerToy should be in disabled state. The runner will call

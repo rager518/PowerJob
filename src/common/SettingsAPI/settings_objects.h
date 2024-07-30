@@ -4,7 +4,7 @@
 
 #include <cwctype>
 
-namespace PowerToysSettings
+namespace PowerJobSettings
 {
     class HotkeyObject;
 

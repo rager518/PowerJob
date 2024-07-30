@@ -16,7 +16,7 @@ public static class Helper
     public static bool AllowRunnerToForeground()
     {
         var result = false;
-        var processes = Process.GetProcessesByName("PowerToys");
+        var processes = Process.GetProcessesByName("PowerJob");
         if (processes.Length > 0)
         {
             var pid = processes[0].Id;
@@ -49,7 +49,7 @@ public static class Helper
 
     public static IFileSystemWatcher GetFileWatcher(string moduleName, string fileName, Action onChangedCallback)
     {
-        var path = FileSystem.Path.Combine(LocalApplicationDataFolder(), $"Microsoft\\PowerToys\\{moduleName}");
+        var path = FileSystem.Path.Combine(LocalApplicationDataFolder(), $"Microsoft\\PowerJob\\{moduleName}");
 
         if (!FileSystem.Directory.Exists(path))
         {
@@ -83,9 +83,9 @@ public static class Helper
         }
     }
 
-    public static string GetPowerToysInstallationFolder()
+    public static string GetPowerJobInstallationFolder()
     {
-        // PowerToys.exe is in the parent folder relative to Settings.
+        // PowerJob.exe is in the parent folder relative to Settings.
         var settingsPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         return Directory.GetParent(settingsPath).FullName;
     }

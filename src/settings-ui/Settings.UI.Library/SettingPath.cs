@@ -19,17 +19,17 @@ public class SettingPath : ISettingsPath
 
     public bool SettingsFolderExists(string powertoy)
     {
-        return _directory.Exists(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerToys\\{powertoy}"));
+        return _directory.Exists(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerJob\\{powertoy}"));
     }
 
     public void CreateSettingsFolder(string powertoy)
     {
-        _directory.CreateDirectory(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerToys\\{powertoy}"));
+        _directory.CreateDirectory(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerJob\\{powertoy}"));
     }
 
     public void DeleteSettings(string powertoy = "")
     {
-        _directory.Delete(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerToys\\{powertoy}"));
+        _directory.Delete(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerJob\\{powertoy}"));
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ public class SettingPath : ISettingsPath
         {
             return _path.Combine(
                 Helper.LocalApplicationDataFolder(),
-                $"Microsoft\\PowerToys\\{fileName}");
+                $"Microsoft\\PowerJob\\{fileName}");
         }
 
         return _path.Combine(
             Helper.LocalApplicationDataFolder(),
-            $"Microsoft\\PowerToys\\{powertoy}\\{fileName}");
+            $"Microsoft\\PowerJob\\{powertoy}\\{fileName}");
     }
 }

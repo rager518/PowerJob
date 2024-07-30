@@ -39,9 +39,9 @@ namespace Microsoft.PowerJob.Telemetry
         public const EventKeywords ProjectKeywordMeasure = (EventKeywords)0x0;
 
         /// <summary>
-        /// Group ID for Powertoys project.
+        /// Group ID for Powerjob project.
         /// </summary>
-        private static readonly string[] PowerToysTelemetryTraits = { "ETW_GROUP", "{42749043-438c-46a2-82be-c6cbeb192ff2}" };
+        private static readonly string[] PowerJobTelemetryTraits = { "ETW_GROUP", "{42749043-438c-46a2-82be-c6cbeb192ff2}" };
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TelemetryBase"/> class.
@@ -52,7 +52,7 @@ namespace Microsoft.PowerJob.Telemetry
             : base(
             eventSourceName,
             EventSourceSettings.EtwSelfDescribingEventFormat,
-            PowerToysTelemetryTraits)
+            PowerJobTelemetryTraits)
         {
             return;
         }

@@ -86,7 +86,7 @@ void Logger::init(std::string loggerName, std::wstring logFilePath, std::wstring
             // todo: that message should be shown from init caller and strings should be localized
             MessageBoxW(NULL,
                         L"Logger can not be initialized",
-                        L"PowerToys",
+                        L"PowerJob",
                         MB_OK | MB_ICONERROR);
 
             SetEnvironmentVariable(logFailedShown.c_str(), L"yes");

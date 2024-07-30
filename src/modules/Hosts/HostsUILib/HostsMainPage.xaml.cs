@@ -207,16 +207,16 @@ public sealed partial class HostsMainPage : Page
 
             dialog.XamlRoot = XamlRoot;
             dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-            dialog.Title = resourceLoader.GetString("WarningDialog_Title");
-            dialog.Content = new TextBlock
-            {
-                Text = resourceLoader.GetString("WarningDialog_Text"),
-                TextWrapping = TextWrapping.Wrap,
-            };
-            dialog.PrimaryButtonText = resourceLoader.GetString("WarningDialog_AcceptBtn");
-            dialog.PrimaryButtonStyle = Application.Current.Resources["AccentButtonStyle"] as Style;
-            dialog.CloseButtonText = resourceLoader.GetString("WarningDialog_QuitBtn");
-            dialog.CloseButtonCommand = ExitCommand;
+            //dialog.Title = resourceLoader.GetString("WarningDialog_Title");
+            //dialog.Content = new TextBlock
+            //{
+            //    Text = resourceLoader.GetString("WarningDialog_Text"),
+            //    TextWrapping = TextWrapping.Wrap,
+            //};
+            //dialog.PrimaryButtonText = resourceLoader.GetString("WarningDialog_AcceptBtn");
+            //dialog.PrimaryButtonStyle = Application.Current.Resources["AccentButtonStyle"] as Style;
+            //dialog.CloseButtonText = resourceLoader.GetString("WarningDialog_QuitBtn");
+            //dialog.CloseButtonCommand = ExitCommand;
 
             await dialog.ShowAsync();
         }

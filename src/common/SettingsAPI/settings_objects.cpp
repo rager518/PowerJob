@@ -2,7 +2,7 @@
 #include "settings_objects.h"
 #include "settings_helpers.h"
 
-namespace PowerToysSettings
+namespace PowerJobSettings
 {
     Settings::Settings(const HINSTANCE hinstance, std::wstring_view powertoy_name)
     {

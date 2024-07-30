@@ -1,4 +1,5 @@
 #pragma once
+
 class Trace
 {
 public:
@@ -11,4 +12,3 @@ public:
     // Log that the user tried to activate the editor
     static void ActivateEditor() noexcept;
 };
-

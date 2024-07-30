@@ -10,8 +10,8 @@
 
 namespace
 {
-    constexpr inline wchar_t POWERTOYS_MSI_MUTEX_NAME[] = L"Local\\PowerToys_Runner_MSI_InstanceMutex";
-    constexpr inline wchar_t POWERTOYS_BOOTSTRAPPER_MUTEX_NAME[] = L"Local\\PowerToys_Bootstrapper_InstanceMutex";
+    constexpr inline wchar_t PowerJob_MSI_MUTEX_NAME[] = L"Local\\PowerJob_Runner_MSI_InstanceMutex";
+    constexpr inline wchar_t PowerJob_BOOTSTRAPPER_MUTEX_NAME[] = L"Local\\PowerJob_Bootstrapper_InstanceMutex";
 }
 
 inline wil::unique_mutex_nothrow createAppMutex(const std::wstring& mutexName)
