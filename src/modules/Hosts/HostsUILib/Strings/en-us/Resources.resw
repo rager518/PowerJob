@@ -252,4 +252,17 @@
 	<data name="UpdateEntry_Title" xml:space="preserve">
     <value>Update the entry</value>
   </data>
+	<data name="WarningDialog_AcceptBtn" xml:space="preserve">
+    <value>GO</value>
+  </data>
+	<data name="WarningDialog_QuitBtn" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+	<data name="WarningDialog_Text" xml:space="preserve">
+    <value>Altering hosts file has direct real world impact of how this computer resolves domain names.</value>
+    <comment>"Hosts" refers to the system hosts file, do not loc</comment>
+  </data>
+	<data name="WarningDialog_Title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
 </root>

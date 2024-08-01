@@ -81,14 +81,14 @@ private:
     void launch_process(bool runas)
     {
         Logger::trace(L"Starting Hosts process");
-        unsigned long powertoys_pid = GetCurrentProcessId();
+        unsigned long powerjob_pid = GetCurrentProcessId();
 
         std::wstring executable_args = L"";
-        executable_args.append(std::to_wstring(powertoys_pid));
+        executable_args.append(std::to_wstring(powerjob_pid));
 
         SHELLEXECUTEINFOW sei{ sizeof(sei) };
         sei.fMask = { SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI };
-        sei.lpFile = L"WinUI3Apps\\PowerToys.Hosts.exe";
+        sei.lpFile = L"WinUI3Apps\\PowerJob.Hosts.exe";
         sei.nShow = SW_SHOWNORMAL;
         sei.lpParameters = executable_args.data();
 
