@@ -16,23 +16,14 @@
 
             <!--  Converters  -->
             <tkconverters:BoolToVisibilityConverter
-                  x:Key="ReverseBoolToVisibilityConverter"
-                  FalseValue="Visible"
-                  TrueValue="Collapsed" />
+                  x:Key="ReverseBoolToVisibilityConverter" FalseValue="Visible" TrueValue="Collapsed" />
             <tkconverters:BoolToVisibilityConverter
-                  x:Key="BoolToVisibilityConverter"
-                  FalseValue="Collapsed"
-                  TrueValue="Visible" />
-
+                  x:Key="BoolToVisibilityConverter" FalseValue="Collapsed" TrueValue="Visible" />
+            
             <tkconverters:BoolToObjectConverter
-                  x:Key="BoolToComboBoxIndexConverter"
-                  FalseValue="0"
-                  TrueValue="1" />
-
+                  x:Key="BoolToComboBoxIndexConverter" FalseValue="0" TrueValue="1" />
             <tkconverters:BoolToObjectConverter
-                  x:Key="ReverseBoolToComboBoxIndexConverter"
-                  FalseValue="1"
-                  TrueValue="0" />
+                  x:Key="ReverseBoolToComboBoxIndexConverter" FalseValue="1" TrueValue="0" />
 
             <tkconverters:StringFormatConverter x:Key="StringFormatConverter" />
             <tkconverters:BoolNegationConverter x:Key="BoolNegationConverter" />

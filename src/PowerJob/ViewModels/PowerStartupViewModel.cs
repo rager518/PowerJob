@@ -31,7 +31,7 @@ public partial class PowerStartupViewModel : ObservableRecipient
     private bool _enabledStateIsGPOConfigured = true;
     private bool _isEnabled = true;
     private bool _isElevated = true;
-    public int _linePosition;
+    private int _linePosition;
 
     private ISettingsUtils SettingsUtils
     {

@@ -68,6 +68,11 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem x:Uid="Shell_AutoStartup" helpers:NavigationHelper.NavigateTo="PowerJob.ViewModels.AutoStartupViewModel">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xebe8;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <!--<NavigationViewItem x:Uid="Shell_SettingsPageControl" helpers:NavigationHelper.NavigateTo="PowerJob.ViewModels.SettingsPageControlViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>

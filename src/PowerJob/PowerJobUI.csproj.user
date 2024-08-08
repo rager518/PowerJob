@@ -10,6 +10,11 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <Page Update="Views\AutoStartupPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>

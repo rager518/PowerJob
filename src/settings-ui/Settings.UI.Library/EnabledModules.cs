@@ -385,6 +385,23 @@ namespace Settings.UI.Library
             }
         }
 
+        private bool autostartup = true;
+
+        [JsonPropertyName("AutoStartup")]
+        public bool AutoStartup
+        {
+            get => autostartup;
+            set
+            {
+                if (autostartup != value)
+                {
+                    LogTelemetryEvent(value);
+                    autostartup = value;
+                    NotifyChange();
+                }
+            }
+        }
+
         private bool fileLocksmith = true;
 
         [JsonPropertyName("File Locksmith")]

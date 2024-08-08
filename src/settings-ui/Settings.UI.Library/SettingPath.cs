@@ -19,7 +19,9 @@ public class SettingPath : ISettingsPath
 
     public bool SettingsFolderExists(string powertoy)
     {
-        return _directory.Exists(System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerJob\\{powertoy}"));
+        var dir = System.IO.Path.Combine(Helper.LocalApplicationDataFolder(), $"Microsoft\\PowerJob\\{powertoy}");
+
+        return _directory.Exists(dir);
     }
 
     public void CreateSettingsFolder(string powertoy)

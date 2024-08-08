@@ -12,7 +12,7 @@ namespace PowerJob.Helpers;
 // Helper class to workaround custom title bar bugs.
 // DISCLAIMER: The resource key names and color values used below are subject to change. Do not depend on them.
 // https://github.com/microsoft/TemplateStudio/issues/4516
-internal class TitleBarHelper
+internal sealed class TitleBarHelper
 {
     private const int WAINACTIVE = 0x00;
     private const int WAACTIVE = 0x01;
