@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AutoStartups (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AutoStartups (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

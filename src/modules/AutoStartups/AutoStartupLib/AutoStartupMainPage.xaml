@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="AutoStartupLib.AutoStartupMainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutoStartupLib"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    xmlns:models="using:AutoStartupLib.Models"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="16" RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Button x:Uid="AddEntryBtn" Command="{x:Bind NewCommand}">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon x:Name="Icon" FontSize="16" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" Glyph="&#xe710;"/>
+                    <TextBlock x:Uid="AddEntry"/>
+                </StackPanel>
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="N" Modifiers="Control"/>
+                </Button.KeyboardAccelerators>
+            </Button>
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Spacing="4">
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="Entries" x:Uid="Entries"  GotFocus="Entries_GotFocus"  ItemsSource="{x:Bind ViewModel.Entries,Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Entry">
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" MaxWidth="150"/>
+                                <ColumnDefinition Width="*" MinWidth="120"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{x:Bind Name,Mode=OneWay}"/>
+                            <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind Path,Mode=OneWay}"/>
+
+                            <Button x:Uid="DeleteEntryBtn" Click="Delete_Click"  Grid.Column="2" Content="{ui:FontIcon Glyph=&#xE74D;,FontSize=16}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <ContentDialog x:Name="DeleteDialog" x:Uid="DeleteDialog" PrimaryButtonCommand="{x:Bind DeleteCommand}" PrimaryButtonStyle="{StaticResource AccentButtonStyle}">
+            <TextBlock x:Uid="DeleteDialogAreYouSure" Text="Are you sure you want to delete"/>
+        </ContentDialog>
+    </Grid>
+</Page>
