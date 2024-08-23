@@ -3,6 +3,8 @@
 // See the LICENSE file in the project root for more information.
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using interop;
+using PowerJob.Commands;
 using PowerToys.GPOWrapper;
 
 //using PowerToys.GPOWrapper;
@@ -106,5 +108,17 @@ public partial class AutoStartupViewModel : ObservableRecipient
     {
         OnPropertyChanged(propertyName);
         SettingsUtils.SaveSettings(Settings.ToJsonString(), AutoStartupSettings.ModuleName);
+    }
+
+    public ButtonClickCommand LaunchEventHandler => new ButtonClickCommand(Launch);
+
+    public void Launch()
+    {
+        string eventName = Constants.ShowAutoStartupsShareEvent();
+
+        using (var eventHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
+        {
+            eventHandle.Set();
+        }
     }
 }

@@ -281,6 +281,10 @@ namespace interop
 			return gcnew String(CommonSharedConstants::SHOW_HOSTS_ADMIN_EVENT);
 		}
 
+		static String^ ShowAutoStartupsShareEvent() {
+			return gcnew String(CommonSharedConstants::SHOW_AUTOSTARTUPS_EVENT);
+		}
+
 		static String^ CropAndLockThumbnailEvent() {
 			return gcnew String(CommonSharedConstants::CROP_AND_LOCK_THUMBNAIL_EVENT);
 		}

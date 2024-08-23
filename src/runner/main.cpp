@@ -134,7 +134,8 @@ int runner(bool isProcessElevated, bool openSettings, std::string settingsWindow
         // Load Powertoys DLLs
 
         std::vector<std::wstring_view> knownModules = {
-            L"WinUI3Apps/PowerJob.HostsModuleInterface.dll",
+            //L"WinUI3Apps/PowerJob.HostsModuleInterface.dll",
+            L"WinUI3Apps/PowerJob.AutoStartupsModuleInterface.dll",
         };
         //const auto VCM_PATH = L"PowerToys.VideoConferenceModule.dll";
         //if (const auto mf = LoadLibraryA("mf.dll"))
