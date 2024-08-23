@@ -1,35 +1,37 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0-windows10.0.20348.0</TargetFramework>
-    <RootNamespace>HostsUILib</RootNamespace>
-	<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	<Platforms>AnyCPU</Platforms>
-    <UseWinUI>true</UseWinUI>
-    <AssemblyName>PowerJob.HostsUILib</AssemblyName>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="HostsMainPage.xaml" />
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net8.0-windows10.0.20348.0</TargetFramework>
+		<RootNamespace>HostsUILib</RootNamespace>
+		<UseWinUI>true</UseWinUI>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<Platforms>AnyCPU</Platforms>
+		
+		<AssemblyName>PowerJob.HostsUILib</AssemblyName>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="HostsMainPage.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Page Update="HostsMainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+	<ItemGroup>
+		<Page Update="HostsMainPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Assets\HostsUILib\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Assets\HostsUILib\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" />
-    <PackageReference Include="CommunityToolkit.WinUI.Collections" />
-    <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-	<PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
-	<PackageReference Include="Microsoft.WindowsAppSDK" />
-	<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" />
-	<PackageReference Include="System.IO.Abstractions" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" />
+		<PackageReference Include="CommunityToolkit.WinUI.Collections" />
+		<PackageReference Include="CommunityToolkit.WinUI.Converters" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" />
+		<PackageReference Include="System.IO.Abstractions" />
+	</ItemGroup>
 </Project>

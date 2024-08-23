@@ -6,9 +6,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<PlatformTarget>x64</PlatformTarget>
 		<EnableNETAnalyzers>False</EnableNETAnalyzers>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<!--<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-		<OutputPath>..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
+		<OutputPath>..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>-->
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Remove="EnabledModules.cs" />

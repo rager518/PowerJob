@@ -5,12 +5,12 @@
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
 
-		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<!--<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>-->
 		<AssemblyName>PowerJob.ManagedTelemetry</AssemblyName>
-		<EnableNETAnalyzers>False</EnableNETAnalyzers>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<!--<EnableNETAnalyzers>False</EnableNETAnalyzers>-->
+		<!--<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-		<OutputPath>..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
+		<OutputPath>..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>-->
 	</PropertyGroup>
 
 	<ItemGroup>

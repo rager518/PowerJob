@@ -121,9 +121,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPOWrapperProjection", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoStartups", "AutoStartups", "{7CF2B229-9A41-46E6-A32B-799582AEA98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoStartups", "src\modules\AutoStartups\AutoStartups\AutoStartups.csproj", "{D88D2B7A-BF13-450E-ABAD-92153E5BB0AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoStartups", "src\modules\AutoStartups\AutoStartups\AutoStartups.csproj", "{D88D2B7A-BF13-450E-ABAD-92153E5BB0AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoStartupLib", "src\modules\AutoStartups\AutoStartupLib\AutoStartupLib.csproj", "{5750AC9F-F882-4854-9368-BFC99701EC37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoStartupLib", "src\modules\AutoStartups\AutoStartupLib\AutoStartupLib.csproj", "{5750AC9F-F882-4854-9368-BFC99701EC37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,7 +150,6 @@ Global
 		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|ARM64.Deploy.0 = Debug|x64
 		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|x64.ActiveCfg = Debug|x64
 		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|x64.Build.0 = Debug|x64
-		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|x64.Deploy.0 = Debug|x64
 		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|x86.ActiveCfg = Debug|x86
 		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|x86.Build.0 = Debug|x86
 		{DC3DC634-811F-4D96-A344-5C5CACB5D7E3}.Debug|x86.Deploy.0 = Debug|x86
@@ -400,7 +399,6 @@ Global
 		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|ARM64.Deploy.0 = Debug|ARM64
 		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|x64.ActiveCfg = Debug|x64
 		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|x64.Build.0 = Debug|x64
-		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|x64.Deploy.0 = Debug|x64
 		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|x86.ActiveCfg = Debug|x86
 		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|x86.Build.0 = Debug|x86
 		{C8ACF573-A20B-463E-92A1-51DA3CA805A6}.Debug|x86.Deploy.0 = Debug|x86
