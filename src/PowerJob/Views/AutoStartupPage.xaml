@@ -14,17 +14,17 @@
         <controls:SettingsPageControl.ModuleContent>
             <StackPanel ChildrenTransitions="{StaticResource SettingsCardsAnimations}" Orientation="Vertical">
                 <tkcontrols:SettingsCard x:Uid="AutoStartup_EnableToggleControl_HeaderText" HeaderIcon="{ui:BitmapIcon Source=/Assets/Settings/Icons/Hosts.png}">
-                    <ToggleSwitch x:Uid="ToggleSwitch"/>
+                    <ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.IsEnabled,Mode=TwoWay}"/>
                 </tkcontrols:SettingsCard>
 
-                <controls:SettingsGroup x:Uid="AutoStartup_Activation_GroupSettings">
+                <controls:SettingsGroup x:Uid="AutoStartup_Activation_GroupSettings" IsEnabled="{x:Bind ViewModel.IsEnabled,Mode=TwoWay}">
                     <tkcontrols:SettingsCard x:Uid="AutoStartup_LaunchButtonControl" ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"          
                                              HeaderIcon="{ui:FontIcon Glyph=&#xEA37;}" IsClickEnabled="True" />
-                    <tkcontrols:SettingsCard x:Uid="AutoStartup_LaunchButtonControl" HeaderIcon="{ui:BitmapIcon Source=/Assets/Settings/Icons/Hosts.png}">
+                    <!--<tkcontrols:SettingsCard x:Uid="AutoStartup_LaunchButtonControl" HeaderIcon="{ui:BitmapIcon Source=/Assets/Settings/Icons/Hosts.png}">
                         <ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.LanuchAS,Mode=TwoWay}" />
-                    </tkcontrols:SettingsCard>
+                    </tkcontrols:SettingsCard>-->
                 </controls:SettingsGroup>
-            
+
             </StackPanel>
         </controls:SettingsPageControl.ModuleContent>
 

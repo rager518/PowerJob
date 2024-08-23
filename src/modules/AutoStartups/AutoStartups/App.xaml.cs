@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using AutoStartupLib;
+using AutoStartupLib.Helpers;
 using AutoStartupLib.ViewModels;
 using AutoStartups.Helpers;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +34,7 @@ namespace AutoStartups
                 .ConfigureServices((context, services) =>
                 {
 
-
+                    services.AddSingleton<IDuplicateService, DuplicateService>();
                     services.AddSingleton<MainViewModel, MainViewModel>();
                     services.AddSingleton<AutoStartupMainPage, AutoStartupMainPage>();
 

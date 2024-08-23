@@ -28,4 +28,8 @@
   <ItemGroup>
     <Resource Remove="AutoStartupMainPage.xaml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\settings-ui\Settings.UI.Library\Settings.UI.Library.csproj" />
+  </ItemGroup>
 </Project>

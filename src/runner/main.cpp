@@ -58,7 +58,7 @@
 
 namespace
 {
-    const wchar_t PT_URI_PROTOCOL_SCHEME[] = L"powertoys://";
+    const wchar_t PT_URI_PROTOCOL_SCHEME[] = L"powerjob://";
     const wchar_t POWER_TOYS_MODULE_LOAD_FAIL[] = L"Failed to load "; // Module name will be appended on this message and it is not localized.
 }
 
@@ -70,7 +70,7 @@ void chdir_current_executable()
     PathRemoveFileSpec(executable_path);
     if (!SetCurrentDirectory(executable_path))
     {
-        show_last_error_message(L"Change Directory to Executable Path", GetLastError(), L"PowerToys - runner");
+        show_last_error_message(L"Change Directory to Executable Path", GetLastError(), L"PowerJob - runner");
     }
 }
 
@@ -333,6 +333,7 @@ int WINAPI WinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR l
 
     auto open_settings_it = cmdLine.find("--open-settings");
     const bool open_settings = open_settings_it != std::string::npos;
+    
     // Check if opening specific settings window
     open_settings_it = cmdLine.find("--open-settings=");
     std::string settings_window;
@@ -424,7 +425,8 @@ int WINAPI WinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR l
                 Logger::info("Restart as elevated failed. Running non-elevated.");
             }
 
-            result = runner(elevated, open_settings, settings_window, openOobe, openScoobe, showRestartNotificationAfterUpdate);
+            //result = runner(elevated, open_settings, settings_window, openOobe, openScoobe, showRestartNotificationAfterUpdate);
+            result = runner(elevated, true, settings_window, openOobe, openScoobe, showRestartNotificationAfterUpdate);
 
             if (result == 0)
             {

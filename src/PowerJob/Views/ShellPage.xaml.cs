@@ -6,7 +6,7 @@ using Microsoft.UI.Xaml.Media;
 using PowerJob.Contracts.Services;
 using PowerJob.Helpers;
 using PowerJob.ViewModels;
-
+using Windows.Data.Json;
 using Windows.System;
 
 namespace PowerJob.Views;
@@ -14,13 +14,17 @@ namespace PowerJob.Views;
 // TODO: Update NavigationViewItem titles and icons in ShellPage.xaml.
 public sealed partial class ShellPage : Page
 {
-    public ShellViewModel ViewModel
-    {
-        get;
-    }
+    public delegate void IPCMessageCallback(string msg);
+    public static IPCMessageCallback DefaultSndMSGCallback { get; set; }
+    public static ShellPage ShellHandler { get; set; }
+    public List<System.Action<JsonObject>> IPCResponseHandleList { get; } = new List<System.Action<JsonObject>>();
+
+    public ShellViewModel ViewModel { get; }
 
     public ShellPage(ShellViewModel viewModel)
     {
+        ShellHandler = this;
+
         ViewModel = viewModel;
         InitializeComponent();
 
@@ -36,9 +40,13 @@ public sealed partial class ShellPage : Page
         AppTitleBarText.Text = "AppDisplayName".GetLocalized();
     }
 
+    public static void SetDefaultSndMessageCallback(IPCMessageCallback implementation)
+    {
+        DefaultSndMSGCallback = implementation;
+    }
     public static int SendDefaultIPCMessage(string msg)
     {
-        //DefaultSndMSGCallback?.Invoke(msg);
+        DefaultSndMSGCallback?.Invoke(msg);
         return 0;
     }
     private void OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)

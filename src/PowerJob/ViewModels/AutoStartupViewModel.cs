@@ -22,20 +22,21 @@ public partial class AutoStartupViewModel : ObservableRecipient
 {
     private bool _enabledStateIsGPOConfigured;
     private bool _isEnabled;
-    private GpoRuleConfigured _enabledGpoRuleConfiguration;
+    //private GpoRuleConfigured _enabledGpoRuleConfiguration;
 
     private ISettingsUtils SettingsUtils { get; set; }
-   // private bool _isEnabled = true;
+    // private bool _isEnabled = true;
     private GeneralSettings GeneralSettingsConfig { get; set; }
     private AutoStartupSettings Settings { get; set; }
     private Func<string, int> SendConfigMSG { get; }
 
     public AutoStartupViewModel(ISettingsUtils settingsUtils, ISettingsRepository<GeneralSettings> settingsRepository,
-        ISettingsRepository<AutoStartupSettings> moduleSettingsRepository)
+        ISettingsRepository<AutoStartupSettings> moduleSettingsRepository, Func<string, int> ipcMSGCallBackFunc)
     {
         SettingsUtils = settingsUtils;
         GeneralSettingsConfig = settingsRepository.SettingsConfig;
         Settings = moduleSettingsRepository.SettingsConfig;
+        SendConfigMSG = ipcMSGCallBackFunc;
 
         InitializeEnabledValue();
 
@@ -44,16 +45,16 @@ public partial class AutoStartupViewModel : ObservableRecipient
 
     private void InitializeEnabledValue()
     {
-        _enabledGpoRuleConfiguration = GPOWrapper.GetConfiguredHostsFileEditorEnabledValue();
-        if (_enabledGpoRuleConfiguration == GpoRuleConfigured.Disabled || _enabledGpoRuleConfiguration == GpoRuleConfigured.Enabled)
+        //_enabledGpoRuleConfiguration = GPOWrapper.GetConfiguredHostsFileEditorEnabledValue();
+        //if (_enabledGpoRuleConfiguration == GpoRuleConfigured.Disabled || _enabledGpoRuleConfiguration == GpoRuleConfigured.Enabled)
+        //{
+        //    // Get the enabled state from GPO.
+        //    _enabledStateIsGPOConfigured = true;
+        //    _isEnabled = _enabledGpoRuleConfiguration == GpoRuleConfigured.Enabled;
+        //}
+        //else
         {
-            // Get the enabled state from GPO.
-            _enabledStateIsGPOConfigured = true;
-            _isEnabled = _enabledGpoRuleConfiguration == GpoRuleConfigured.Enabled;
-        }
-        else
-        {
-            _isEnabled = GeneralSettingsConfig.Enabled.Hosts;
+            _isEnabled = GeneralSettingsConfig.Enabled.AutoStartup;
         }
     }
 
@@ -63,11 +64,11 @@ public partial class AutoStartupViewModel : ObservableRecipient
 
         set
         {
-            if (_enabledStateIsGPOConfigured)
-            {
-                // If it's GPO configured, shouldn't be able to change this state.
-                return;
-            }
+            //if (_enabledStateIsGPOConfigured)
+            //{
+            //    // If it's GPO configured, shouldn't be able to change this state.
+            //    return;
+            //}
 
             if (value != _isEnabled)
             {

@@ -1,5 +1,7 @@
-﻿using PowerJob.Helpers;
-
+﻿using ManagedCommon;
+using PowerJob.Helpers;
+using PowerJob.Views;
+using Windows.Data.Json;
 using Windows.UI.ViewManagement;
 
 namespace PowerJob;
@@ -22,6 +24,35 @@ public sealed partial class MainWindow : WindowEx
         dispatcherQueue = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
         settings = new UISettings();
         settings.ColorValuesChanged += Settings_ColorValuesChanged; // cannot use FrameworkElement.ActualThemeChanged event
+
+        // send IPC Message
+        ShellPage.SetDefaultSndMessageCallback(msg =>
+        {
+            // IPC Manager is null when launching runner directly
+            App.GetTwoWayIPCManager()?.Send(msg);
+        });
+
+
+        // receive IPC Message
+        App.IPCMessageReceivedCallback = (string msg) =>
+        {
+            if (ShellPage.ShellHandler.IPCResponseHandleList != null)
+            {
+                var success = JsonObject.TryParse(msg, out JsonObject json);
+                if (success)
+                {
+                    foreach (Action<JsonObject> handle in ShellPage.ShellHandler.IPCResponseHandleList)
+                    {
+                        handle(json);
+                    }
+                }
+                else
+                {
+                    Logger.LogError("Failed to parse JSON from IPC message.");
+                }
+            }
+        };
+
     }
 
     // this handles updating the caption button colors correctly when indows system theme is changed

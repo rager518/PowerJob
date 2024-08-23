@@ -19,67 +19,69 @@
 		<EnableNETAnalyzers>False</EnableNETAnalyzers>
 		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<OutputPath>..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
+		
+		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+		<!--<ProjectPriFileName>PowerJob.Settings.pri</ProjectPriFileName>-->
 	</PropertyGroup>
-  <!--<PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.20348.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
-    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
-    <RootNamespace>PowerJob</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
-    <UseWinUI>true</UseWinUI>
-    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<Nullable>enable</Nullable>
-    <WindowsPackageType>None</WindowsPackageType>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-    <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
-    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-    --><!-- OutputPath looks like this because it has to be called both by settings and publish.cmd --><!--
-    <OutputPath>..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
-    <SelfContained>true</SelfContained>
-    --><!-- MRT from windows app sdk will search for a pri file with the same name of the module before defaulting to resources.pri --><!--
-    <ProjectPriFileName>PowerJob.Settings.pri</ProjectPriFileName>
+	<!--<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows10.0.20348.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+		<RootNamespace>PowerJob</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+		<UseWinUI>true</UseWinUI>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<WindowsPackageType>None</WindowsPackageType>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<OutputPath>..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
+		<ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
+		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+		<SelfContained>true</SelfContained>
+		<ProjectPriFileName>PowerJob.Settings.pri</ProjectPriFileName>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+	</PropertyGroup>-->
 
-	  <EnableNETAnalyzers>False</EnableNETAnalyzers>
-	  <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
-	  <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+	<!-- SelfContained=true requires RuntimeIdentifier to be set -->
+	<PropertyGroup Condition="'$(Platform)'=='x64'">
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Platform)'=='ARM64'">
+		<RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+	</PropertyGroup>
 
-  </PropertyGroup>-->
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<NoWarn></NoWarn>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<WarningsNotAsErrors>CA1720</WarningsNotAsErrors>
+		<Optimize>False</Optimize>
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
 
-  <!-- SelfContained=true requires RuntimeIdentifier to be set -->
-  <PropertyGroup Condition="'$(Platform)'=='x64'">
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Platform)'=='ARM64'">
-    <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<NoWarn></NoWarn>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<WarningsNotAsErrors>CA1720</WarningsNotAsErrors>
+		<Optimize>true</Optimize>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <NoWarn></NoWarn>
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <WarningsNotAsErrors>CA1720</WarningsNotAsErrors>
-    <Optimize>False</Optimize>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <NoWarn></NoWarn>
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <WarningsNotAsErrors>CA1720</WarningsNotAsErrors>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-
-  <!-- See https://learn.microsoft.com/windows/apps/develop/platform/csharp-winrt/net-projection-from-cppwinrt-component for more info -->
-  <PropertyGroup>
-    <CsWinRTIncludes>PowerToys.GPOWrapper</CsWinRTIncludes>
-    <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
-    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
-  </PropertyGroup>
+	<!-- See https://learn.microsoft.com/windows/apps/develop/platform/csharp-winrt/net-projection-from-cppwinrt-component for more info -->
+	<PropertyGroup>
+		<CsWinRTIncludes>PowerToys.GPOWrapper</CsWinRTIncludes>
+		<CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<None Remove="Assets\Settings\HostsFileEditor.png" />
@@ -122,7 +124,7 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 		<Page Update="Views\AutoStartupPage.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</Page>
 		<Page Update="Themes\Generic.xaml">
 			<Generator>MSBuild:Compile</Generator>

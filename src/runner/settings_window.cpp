@@ -333,8 +333,8 @@ void run_settings_window(bool show_oobe_window, bool show_scoobe_window, std::op
     executable_path.append(L"\\WinUI3Apps\\PowerJobUI.exe");
 
     // Args 2,3: pipe server. Generate unique names for the pipes, if getting a UUID is possible.
-    std::wstring powertoys_pipe_name(L"\\\\.\\pipe\\powertoys_runner_");
-    std::wstring settings_pipe_name(L"\\\\.\\pipe\\powertoys_settings_");
+    std::wstring powertoys_pipe_name(L"\\\\.\\pipe\\powerjob_runner_");
+    std::wstring settings_pipe_name(L"\\\\.\\pipe\\powerjob_settings_");
     UUID temp_uuid;
     wchar_t* uuid_chars = nullptr;
     if (UuidCreate(&temp_uuid) == RPC_S_UUID_NO_ADDRESS)

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using interop;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
 
@@ -12,12 +13,30 @@ using PowerJob.Notifications;
 using PowerJob.Services;
 using PowerJob.ViewModels;
 using PowerJob.Views;
+using Windows.UI.Input.Inking;
 
 namespace PowerJob;
 
 // To learn more about WinUI 3, see https://docs.microsoft.com/windows/apps/winui/winui3/.
 public partial class App : Application
 {
+    private enum Arguments
+    {
+        PTPipeName = 1,
+        SettingsPipeName,
+        PTPid,
+        Theme, // used in the old settings
+        ElevatedStatus,
+        IsUserAdmin,
+        ShowOobeWindow,
+        ShowScoobeWindow,
+        ShowFlyout,
+        ContainsSettingsWindow,
+        ContainsFlyoutPosition,
+    }
+
+    private const int RequiredArgumentsLaunchedFromRunnerQty = 12;
+
     // The .NET Generic Host provides dependency injection, configuration, logging, and other services.
     // https://docs.microsoft.com/dotnet/core/extensions/generic-host
     // https://docs.microsoft.com/dotnet/core/extensions/dependency-injection
@@ -107,6 +126,14 @@ public partial class App : Application
         UnhandledException += App_UnhandledException;
     }
 
+    private static TwoWayPipeMessageIPCManaged ipcmanager;
+    public static TwoWayPipeMessageIPCManaged GetTwoWayIPCManager()
+    {
+        return ipcmanager;
+    }
+
+    public static Action<string> IPCMessageReceivedCallback { get; set; }
+
     private void App_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
     {
         // TODO: Log and handle exceptions as appropriate.
@@ -116,6 +143,19 @@ public partial class App : Application
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         base.OnLaunched(args);
+        var cmdArgs = Environment.GetCommandLineArgs();
+
+        if (cmdArgs.Length > RequiredArgumentsLaunchedFromRunnerQty)
+        {
+            ipcmanager = new TwoWayPipeMessageIPCManaged(cmdArgs[(int)Arguments.SettingsPipeName], cmdArgs[(int)Arguments.PTPipeName], (string message) =>
+            {
+                if (IPCMessageReceivedCallback != null && message.Length > 0)
+                {
+                    IPCMessageReceivedCallback(message);
+                }
+            });
+            ipcmanager.Start();
+        }
 
         App.GetService<IAppNotificationService>().Show(string.Format("AppNotificationSamplePayload".GetLocalized(), AppContext.BaseDirectory));
 

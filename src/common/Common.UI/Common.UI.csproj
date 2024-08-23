@@ -6,6 +6,9 @@
     <UseWinUI>true</UseWinUI>
     <!--<SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>-->
     <AssemblyName>PowerJob.Common.UI</AssemblyName>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	  <OutputPath>..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="ControlzEx" />

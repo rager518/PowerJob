@@ -25,7 +25,7 @@ public sealed partial class MainWindow : WindowEx
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(titleBar);
         //AppWindow.SetIcon("Assets/Hosts/Hosts.ico");
-        AppTitleTextBlock.Text = "Hello";
+        AppTitleTextBlock.Text = "Startups";
 
         MainPage = Host.GetService<AutoStartupMainPage>();
         MainPage.Hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);

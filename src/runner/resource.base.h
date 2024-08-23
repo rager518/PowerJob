@@ -5,9 +5,9 @@
 //////////////////////////////
 // Non-localizable
 
-#define FILE_DESCRIPTION "PowerToys.Runner"
-#define INTERNAL_NAME "PowerToys"
-#define ORIGINAL_FILENAME "PowerToys.exe"
+#define FILE_DESCRIPTION "PowerJob.Runner"
+#define INTERNAL_NAME "PowerJob"
+#define ORIGINAL_FILENAME "PowerJob.exe"
 
 // Non-localizable
 //////////////////////////////

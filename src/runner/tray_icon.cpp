@@ -302,7 +302,7 @@ void start_tray_icon(bool isProcessElevated)
             pt_version_tooltip_stream << GET_RESOURCE_STRING(IDS_TRAY_ICON_ADMIN_TOOLTIP) << L": ";
         }
 
-        pt_version_tooltip_stream << L"PowerToys " << get_product_version() << '\0';
+        pt_version_tooltip_stream << L"PowerJob " << get_product_version() << '\0';
         std::wstring pt_version_tooltip = pt_version_tooltip_stream.str();
         wcscpy_s(tray_icon_data.szTip, sizeof(tray_icon_data.szTip) / sizeof(WCHAR), pt_version_tooltip.c_str());
         tray_icon_data.uFlags = NIF_ICON | NIF_TIP | NIF_MESSAGE;

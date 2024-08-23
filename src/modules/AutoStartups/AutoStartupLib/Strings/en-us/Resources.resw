@@ -43,13 +43,13 @@
     <value>2New entry22</value>
   </data>-->
 	<data name="AddEntry.Text" xml:space="preserve">
-    <value>New entry</value>
+    <value>New startup</value>
   </data>
 	<data name="AddEntryBtn.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>New entry</value>
+    <value>New startup</value>
   </data>
 	<data name="AddEntryBtn.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>New entry (Ctrl+N)</value>
+    <value>New startup (Ctrl+N)</value>
   </data>
 	<data name="DeleteDialog.CloseButtonText" xml:space="preserve">
     <value>No</value>

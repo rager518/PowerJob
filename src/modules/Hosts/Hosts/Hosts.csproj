@@ -20,7 +20,7 @@
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<OutputPath>..\..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
 		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-		<SelfContained>true</SelfContained>
+		<!--<SelfContained>true</SelfContained>-->
 		
 		<!--<ProjectPriFileName>PowerJob.Hosts.pri</ProjectPriFileName>-->
 	</PropertyGroup>

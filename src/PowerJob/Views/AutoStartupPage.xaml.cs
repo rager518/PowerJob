@@ -34,7 +34,7 @@ public sealed partial class AutoStartupPage : Page
     public AutoStartupPage()
     {
         var settingsUtils = new SettingsUtils();
-        ViewModel = new AutoStartupViewModel(settingsUtils, SettingsRepository<GeneralSettings>.GetInstance(settingsUtils), SettingsRepository<AutoStartupSettings>.GetInstance(settingsUtils));
+        ViewModel = new AutoStartupViewModel(settingsUtils, SettingsRepository<GeneralSettings>.GetInstance(settingsUtils), SettingsRepository<AutoStartupSettings>.GetInstance(settingsUtils), ShellPage.SendDefaultIPCMessage);
 
         this.InitializeComponent();
     }

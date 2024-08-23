@@ -36,13 +36,11 @@ public sealed partial class AutoStartupMainPage : Page
         ViewModel.DeleteSelected();
     }
 
-
     public AutoStartupMainPage(MainViewModel viewModel)
     {
         this.InitializeComponent();
         this.ViewModel = viewModel;
-
-        //this.DataContext = ViewModel; 
+        this.DataContext = ViewModel;
     }
 
     private async Task OpenNewDialogAsync()
@@ -66,10 +64,8 @@ public sealed partial class AutoStartupMainPage : Page
 
     private void Page_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
-        //this.ViewModel.Add(new Entry("name", "path"));
         this.ViewModel.ReadSettings();
     }
-
 
     private async void Delete_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
@@ -77,7 +73,7 @@ public sealed partial class AutoStartupMainPage : Page
         {
             ViewModel.Selected = entry;
 
-            DeleteDialog.Title = "Del";
+            DeleteDialog.Title = entry.Name;
 
             await DeleteDialog.ShowAsync();
         }
@@ -96,5 +92,11 @@ public sealed partial class AutoStartupMainPage : Page
         {
             Entries.SelectedIndex = 0;
         }
+    }
+
+    private void Entries_ItemClick(object sender, ItemClickEventArgs e)
+    {
+        Entry entry = e.ClickedItem as Entry;
+        ViewModel.Selected = entry;
     }
 }

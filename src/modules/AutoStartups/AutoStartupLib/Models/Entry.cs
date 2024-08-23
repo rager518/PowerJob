@@ -8,18 +8,14 @@ namespace AutoStartupLib.Models;
 
 public partial class Entry : ObservableObject
 {
-    //[ObservableProperty]
-    //private string _name;
-    //[ObservableProperty]
-    //private string _path;
+    [ObservableProperty]
+    private string _name;
+    [ObservableProperty]
+    private string _path;
 
     public Entry(string name, string path)
     {
         Name = name;
         Path = path;
     }
-
-    public string Name { get; set; }
-    public string Path { get; set; }
-
 }
