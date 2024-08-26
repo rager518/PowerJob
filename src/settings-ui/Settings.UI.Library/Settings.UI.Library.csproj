@@ -15,7 +15,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\common\interop\PowerJob.interop.vcxproj" />
     <ProjectReference Include="..\..\common\ManagedCommon\ManagedCommon.csproj" />
   </ItemGroup>
 

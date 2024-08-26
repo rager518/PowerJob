@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DataTransfers (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DataTransfers (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

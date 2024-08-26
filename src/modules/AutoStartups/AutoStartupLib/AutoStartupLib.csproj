@@ -1,37 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0-windows10.0.20348.0</TargetFramework>
-    <RootNamespace>AutoStartupLib</RootNamespace>
-    <UseWinUI>true</UseWinUI>
-	  <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
-	  <!--<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net8.0-windows10.0.20348.0</TargetFramework>
+		<RootNamespace>AutoStartupLib</RootNamespace>
+		<UseWinUI>true</UseWinUI>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<!--<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>-->
-	  <Platforms>AnyCPU</Platforms>
-  </PropertyGroup>
+		<Platforms>AnyCPU</Platforms>
+		<!--<AssemblyName>PowerJob.AutoStartupLib</AssemblyName>-->
+	</PropertyGroup>
 
-  <ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" />
-	  <PackageReference Include="CommunityToolkit.WinUI.Collections" />
-	  <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-	  <PackageReference Include="System.IO.Abstractions" />
-      <PackageReference Include="Microsoft.WindowsAppSDK" />
-      <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
-	  <PackageReference Include="Microsoft.Extensions.Hosting" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" />
+		<PackageReference Include="CommunityToolkit.WinUI.Collections" />
+		<PackageReference Include="CommunityToolkit.WinUI.Converters" />
+		<PackageReference Include="System.IO.Abstractions" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <CustomAdditionalCompileInputs Remove="AutoStartupMainPage.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<CustomAdditionalCompileInputs Remove="AutoStartupMainPage.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Remove="AutoStartupMainPage.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="AutoStartupMainPage.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Remove="AutoStartupMainPage.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Remove="AutoStartupMainPage.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\settings-ui\Settings.UI.Library\Settings.UI.Library.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\settings-ui\Settings.UI.Library\Settings.UI.Library.csproj" />
+	</ItemGroup>
 </Project>
