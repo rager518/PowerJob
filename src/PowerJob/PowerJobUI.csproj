@@ -21,7 +21,7 @@
 	
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-		<OutputPath>..\..\$(Platform)\$(Configuration)\WinUI4Apps</OutputPath>
+		<OutputPath>..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
 		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
 		<SelfContained>true</SelfContained>
 		<!--<ProjectPriFileName>PowerJob.Settings.pri</ProjectPriFileName>-->
@@ -145,6 +145,10 @@
 
 	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnablePreviewMsixTooling)'=='true'">
 		<ProjectCapability Include="Msix" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewsMain\" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
