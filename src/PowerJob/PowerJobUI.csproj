@@ -24,7 +24,7 @@
 		<OutputPath>..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
 		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
 		<SelfContained>true</SelfContained>
-		<!--<ProjectPriFileName>PowerJob.Settings.pri</ProjectPriFileName>-->
+		<ProjectPriFileName>PowerJobUI.pri</ProjectPriFileName>
 	</PropertyGroup>
 	<!--<PropertyGroup>
 		<OutputType>WinExe</OutputType>
@@ -95,6 +95,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Page Remove="ViewsMain\App.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ApplicationDefinition Include="ViewsMain\App.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 
@@ -145,10 +153,6 @@
 
 	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnablePreviewMsixTooling)'=='true'">
 		<ProjectCapability Include="Msix" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="ViewsMain\" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
