@@ -1,4 +1,5 @@
 ﻿using ManagedCommon;
+using Microsoft.UI.Xaml.Controls;
 using PowerJob.Helpers;
 using PowerJob.Views;
 using Windows.Data.Json;
@@ -12,13 +13,16 @@ public sealed partial class MainWindow : WindowEx
 
     private UISettings settings;
 
-    public MainWindow()
+
+    public MainWindow(string title)
     {
         InitializeComponent();
 
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/WindowIcon.ico"));
         Content = null;
-        Title = "AppDisplayName".GetLocalized();
+        Title = title ?? "AppDisplayName".GetLocalized();
+
+        Logger.LogError("Failed to parse JSON from IPC message.");
 
         // Theme change code picked from https://github.com/microsoft/WinUI-Gallery/pull/1239
         dispatcherQueue = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
@@ -30,6 +34,27 @@ public sealed partial class MainWindow : WindowEx
         {
             // IPC Manager is null when launching runner directly
             App.GetTwoWayIPCManager()?.Send(msg);
+        });
+
+
+        ShellPage.SetUpdatingGeneralSettingsCallback((ModuleType moduleType, bool isEnabled) =>
+        {
+            //SettingsRepository<GeneralSettings> repository = SettingsRepository<GeneralSettings>.GetInstance(new SettingsUtils());
+            //GeneralSettings generalSettingsConfig = repository.SettingsConfig;
+            bool needToUpdate = false; // ModuleHelper.GetIsModuleEnabled(generalSettingsConfig, moduleType) != isEnabled;
+
+            //if (needToUpdate)
+            //{
+            //    ModuleHelper.SetIsModuleEnabled(generalSettingsConfig, moduleType, isEnabled);
+            //    var outgoing = new OutGoingGeneralSettings(generalSettingsConfig);
+            //    this.DispatcherQueue.TryEnqueue(Microsoft.UI.Dispatching.DispatcherQueuePriority.Normal, () =>
+            //    {
+            //        ShellPage.SendDefaultIPCMessage(outgoing.ToString());
+            //        ShellPage.ShellHandler?.SignalGeneralDataUpdate();
+            //    });
+            //}
+
+            return needToUpdate;
         });
 
 

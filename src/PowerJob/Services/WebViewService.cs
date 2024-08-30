@@ -9,9 +9,9 @@ namespace PowerJob.Services;
 
 public class WebViewService : IWebViewService
 {
-    private WebView2? _webView;
+    private WebView2 _webView;
 
-    public Uri? Source => _webView?.Source;
+    public Uri Source => _webView?.Source;
 
     [MemberNotNullWhen(true, nameof(_webView))]
     public bool CanGoBack => _webView != null && _webView.CanGoBack;
@@ -19,7 +19,7 @@ public class WebViewService : IWebViewService
     [MemberNotNullWhen(true, nameof(_webView))]
     public bool CanGoForward => _webView != null && _webView.CanGoForward;
 
-    public event EventHandler<CoreWebView2WebErrorStatus>? NavigationCompleted;
+    public event EventHandler<CoreWebView2WebErrorStatus> NavigationCompleted;
 
     public WebViewService()
     {

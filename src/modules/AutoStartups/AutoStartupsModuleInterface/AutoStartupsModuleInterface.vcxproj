@@ -69,7 +69,9 @@
     <ResourceCompile Include="Generated Files\AutoStartupsModuleInterface.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource.resx" />
+    <None Include="Resource.resx">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\common\logger\logger.vcxproj">

@@ -41,7 +41,7 @@ public partial class ContentGridViewModel : ObservableRecipient, INavigationAwar
     }
 
     [RelayCommand]
-    private void OnItemClick(SampleOrder? clickedItem)
+    private void OnItemClick(SampleOrder clickedItem)
     {
         if (clickedItem != null)
         {

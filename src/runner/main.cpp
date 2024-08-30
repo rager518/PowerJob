@@ -315,7 +315,7 @@ int WINAPI WinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR l
         notifications::remove_toasts_by_tag(notifications::UPDATING_PROCESS_TOAST_TAG);
         notifications::remove_all_scheduled_toasts();
         notifications::show_toast(GET_RESOURCE_STRING(IDS_PT_UPDATE_MESSAGE_BOX_TEXT),
-                                  L"PowerToys",
+                                  L"PowerJob",
                                   notifications::toast_params{ notifications::UPDATING_PROCESS_TOAST_TAG });
         break;
     }

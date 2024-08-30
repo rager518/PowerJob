@@ -88,7 +88,7 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         WebViewService.NavigationCompleted -= OnNavigationCompleted;
     }
 
-    private void OnNavigationCompleted(object? sender, CoreWebView2WebErrorStatus webErrorStatus)
+    private void OnNavigationCompleted(object sender, CoreWebView2WebErrorStatus webErrorStatus)
     {
         IsLoading = false;
         BrowserBackCommand.NotifyCanExecuteChanged();

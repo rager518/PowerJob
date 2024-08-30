@@ -25,463 +25,463 @@ namespace Settings.UI.Library
         {
         }
 
-        private bool fancyZones = true;
+        //private bool fancyZones = true;
 
-        [JsonPropertyName("FancyZones")]
-        public bool FancyZones
+        //[JsonPropertyName("FancyZones")]
+        //public bool FancyZones
+        //{
+        //    get => fancyZones;
+        //    set
+        //    {
+        //        if (fancyZones != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            fancyZones = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool imageResizer = true;
+
+        //[JsonPropertyName("Image Resizer")]
+        //public bool ImageResizer
+        //{
+        //    get => imageResizer;
+        //    set
+        //    {
+        //        if (imageResizer != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            imageResizer = value;
+        //        }
+        //    }
+        //}
+
+        //private bool fileExplorerPreview = true;
+
+        //[JsonPropertyName("File Explorer Preview")]
+        //public bool PowerPreview
+        //{
+        //    get => fileExplorerPreview;
+        //    set
+        //    {
+        //        if (fileExplorerPreview != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            fileExplorerPreview = value;
+        //        }
+        //    }
+        //}
+
+        //private bool shortcutGuide = true;
+
+        //[JsonPropertyName("Shortcut Guide")]
+        //public bool ShortcutGuide
+        //{
+        //    get => shortcutGuide;
+        //    set
+        //    {
+        //        if (shortcutGuide != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            shortcutGuide = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool videoConference; // defaulting to off https://github.com/microsoft/PowerJob/issues/14507
+
+        //[JsonPropertyName("Video Conference")]
+        //public bool VideoConference
+        //{
+        //    get => this.videoConference;
+        //    set
+        //    {
+        //        if (this.videoConference != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            this.videoConference = value;
+        //        }
+        //    }
+        //}
+
+        //private bool powerRename = true;
+
+        //public bool PowerRename
+        //{
+        //    get => powerRename;
+        //    set
+        //    {
+        //        if (powerRename != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            powerRename = value;
+        //        }
+        //    }
+        //}
+
+        //private bool keyboardManager; // defaulting to off
+
+        //[JsonPropertyName("Keyboard Manager")]
+        //public bool KeyboardManager
+        //{
+        //    get => keyboardManager;
+        //    set
+        //    {
+        //        if (keyboardManager != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            keyboardManager = value;
+        //        }
+        //    }
+        //}
+
+        //private bool powerLauncher = true;
+
+        //[JsonPropertyName("PowerJob Run")]
+        //public bool PowerLauncher
+        //{
+        //    get => powerLauncher;
+        //    set
+        //    {
+        //        if (powerLauncher != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            powerLauncher = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool colorPicker = true;
+
+        //[JsonPropertyName("ColorPicker")]
+        //public bool ColorPicker
+        //{
+        //    get => colorPicker;
+        //    set
+        //    {
+        //        if (colorPicker != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            colorPicker = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool cropAndLock = true;
+
+        //[JsonPropertyName("CropAndLock")]
+        //public bool CropAndLock
+        //{
+        //    get => cropAndLock;
+        //    set
+        //    {
+        //        if (cropAndLock != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            cropAndLock = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool awake = true;
+
+        //[JsonPropertyName("Awake")]
+        //public bool Awake
+        //{
+        //    get => awake;
+        //    set
+        //    {
+        //        if (awake != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            awake = value;
+        //        }
+        //    }
+        //}
+
+        //private bool mouseWithoutBorders; // defaulting to off
+
+        //[JsonPropertyName("MouseWithoutBorders")]
+        //public bool MouseWithoutBorders
+        //{
+        //    get => mouseWithoutBorders;
+        //    set
+        //    {
+        //        if (mouseWithoutBorders != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            mouseWithoutBorders = value;
+        //        }
+        //    }
+        //}
+
+        //private bool findMyMouse = true;
+
+        //[JsonPropertyName("FindMyMouse")]
+        //public bool FindMyMouse
+        //{
+        //    get => findMyMouse;
+        //    set
+        //    {
+        //        if (findMyMouse != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            findMyMouse = value;
+        //        }
+        //    }
+        //}
+
+        //private bool mouseHighlighter = true;
+
+        //[JsonPropertyName("MouseHighlighter")]
+        //public bool MouseHighlighter
+        //{
+        //    get => mouseHighlighter;
+        //    set
+        //    {
+        //        if (mouseHighlighter != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            mouseHighlighter = value;
+        //        }
+        //    }
+        //}
+
+        //private bool mouseJump; // defaulting to off
+
+        //[JsonPropertyName("MouseJump")]
+        //public bool MouseJump
+        //{
+        //    get => mouseJump;
+        //    set
+        //    {
+        //        if (mouseJump != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            mouseJump = value;
+        //        }
+        //    }
+        //}
+
+        //private bool alwaysOnTop = true;
+
+        //[JsonPropertyName("AlwaysOnTop")]
+        //public bool AlwaysOnTop
+        //{
+        //    get => alwaysOnTop;
+        //    set
+        //    {
+        //        if (alwaysOnTop != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            alwaysOnTop = value;
+        //        }
+        //    }
+        //}
+
+        //private bool mousePointerCrosshairs; // defaulting to off
+
+        //[JsonPropertyName("MousePointerCrosshairs")]
+        //public bool MousePointerCrosshairs
+        //{
+        //    get => mousePointerCrosshairs;
+        //    set
+        //    {
+        //        if (mousePointerCrosshairs != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            mousePointerCrosshairs = value;
+        //        }
+        //    }
+        //}
+
+        //private bool powerAccent; // defaulting to off
+
+        //[JsonPropertyName("QuickAccent")]
+        //public bool PowerAccent
+        //{
+        //    get => powerAccent;
+        //    set
+        //    {
+        //        if (powerAccent != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            powerAccent = value;
+        //        }
+        //    }
+        //}
+
+        //private bool powerOCR; // defaulting to off
+
+        //[JsonPropertyName("TextExtractor")]
+        //public bool PowerOcr
+        //{
+        //    get => powerOCR;
+        //    set
+        //    {
+        //        if (powerOCR != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            powerOCR = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool advancedPaste = true;
+
+        //[JsonPropertyName("AdvancedPaste")]
+        //public bool AdvancedPaste
+        //{
+        //    get => advancedPaste;
+        //    set
+        //    {
+        //        if (advancedPaste != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            advancedPaste = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool measureTool = true;
+
+        //[JsonPropertyName("Measure Tool")]
+        //public bool MeasureTool
+        //{
+        //    get => measureTool;
+        //    set
+        //    {
+        //        if (measureTool != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            measureTool = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        //private bool hosts = true;
+
+        //[JsonPropertyName("Hosts")]
+        //public bool Hosts
+        //{
+        //    get => hosts;
+        //    set
+        //    {
+        //        if (hosts != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            hosts = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
+
+        private bool autostarts = true;
+
+        [JsonPropertyName("AutoStarts")]
+        public bool AutoStarts
         {
-            get => fancyZones;
+            get => autostarts;
             set
             {
-                if (fancyZones != value)
+                if (autostarts != value)
                 {
                     LogTelemetryEvent(value);
-                    fancyZones = value;
+                    autostarts = value;
                     NotifyChange();
                 }
             }
         }
 
-        private bool imageResizer = true;
+        //private bool fileLocksmith = true;
 
-        [JsonPropertyName("Image Resizer")]
-        public bool ImageResizer
-        {
-            get => imageResizer;
-            set
-            {
-                if (imageResizer != value)
-                {
-                    LogTelemetryEvent(value);
-                    imageResizer = value;
-                }
-            }
-        }
+        //[JsonPropertyName("File Locksmith")]
+        //public bool FileLocksmith
+        //{
+        //    get => fileLocksmith;
+        //    set
+        //    {
+        //        if (fileLocksmith != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            fileLocksmith = value;
+        //        }
+        //    }
+        //}
 
-        private bool fileExplorerPreview = true;
+        //private bool peek = true;
 
-        [JsonPropertyName("File Explorer Preview")]
-        public bool PowerPreview
-        {
-            get => fileExplorerPreview;
-            set
-            {
-                if (fileExplorerPreview != value)
-                {
-                    LogTelemetryEvent(value);
-                    fileExplorerPreview = value;
-                }
-            }
-        }
+        //[JsonPropertyName("Peek")]
+        //public bool Peek
+        //{
+        //    get => peek;
+        //    set
+        //    {
+        //        if (peek != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            peek = value;
+        //        }
+        //    }
+        //}
 
-        private bool shortcutGuide = true;
+        //private bool registryPreview = true;
 
-        [JsonPropertyName("Shortcut Guide")]
-        public bool ShortcutGuide
-        {
-            get => shortcutGuide;
-            set
-            {
-                if (shortcutGuide != value)
-                {
-                    LogTelemetryEvent(value);
-                    shortcutGuide = value;
-                    NotifyChange();
-                }
-            }
-        }
+        //[JsonPropertyName("RegistryPreview")]
+        //public bool RegistryPreview
+        //{
+        //    get => registryPreview;
+        //    set
+        //    {
+        //        if (registryPreview != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            registryPreview = value;
+        //        }
+        //    }
+        //}
 
-        private bool videoConference; // defaulting to off https://github.com/microsoft/PowerJob/issues/14507
+        //private bool cmdNotFound = true;
 
-        [JsonPropertyName("Video Conference")]
-        public bool VideoConference
-        {
-            get => this.videoConference;
-            set
-            {
-                if (this.videoConference != value)
-                {
-                    LogTelemetryEvent(value);
-                    this.videoConference = value;
-                }
-            }
-        }
+        //[JsonPropertyName("CmdNotFound")]
+        //public bool CmdNotFound
+        //{
+        //    get => cmdNotFound;
+        //    set
+        //    {
+        //        if (cmdNotFound != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            cmdNotFound = value;
+        //            NotifyChange();
+        //        }
+        //    }
+        //}
 
-        private bool powerRename = true;
+        //private bool environmentVariables = true;
 
-        public bool PowerRename
-        {
-            get => powerRename;
-            set
-            {
-                if (powerRename != value)
-                {
-                    LogTelemetryEvent(value);
-                    powerRename = value;
-                }
-            }
-        }
-
-        private bool keyboardManager; // defaulting to off
-
-        [JsonPropertyName("Keyboard Manager")]
-        public bool KeyboardManager
-        {
-            get => keyboardManager;
-            set
-            {
-                if (keyboardManager != value)
-                {
-                    LogTelemetryEvent(value);
-                    keyboardManager = value;
-                }
-            }
-        }
-
-        private bool powerLauncher = true;
-
-        [JsonPropertyName("PowerJob Run")]
-        public bool PowerLauncher
-        {
-            get => powerLauncher;
-            set
-            {
-                if (powerLauncher != value)
-                {
-                    LogTelemetryEvent(value);
-                    powerLauncher = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool colorPicker = true;
-
-        [JsonPropertyName("ColorPicker")]
-        public bool ColorPicker
-        {
-            get => colorPicker;
-            set
-            {
-                if (colorPicker != value)
-                {
-                    LogTelemetryEvent(value);
-                    colorPicker = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool cropAndLock = true;
-
-        [JsonPropertyName("CropAndLock")]
-        public bool CropAndLock
-        {
-            get => cropAndLock;
-            set
-            {
-                if (cropAndLock != value)
-                {
-                    LogTelemetryEvent(value);
-                    cropAndLock = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool awake = true;
-
-        [JsonPropertyName("Awake")]
-        public bool Awake
-        {
-            get => awake;
-            set
-            {
-                if (awake != value)
-                {
-                    LogTelemetryEvent(value);
-                    awake = value;
-                }
-            }
-        }
-
-        private bool mouseWithoutBorders; // defaulting to off
-
-        [JsonPropertyName("MouseWithoutBorders")]
-        public bool MouseWithoutBorders
-        {
-            get => mouseWithoutBorders;
-            set
-            {
-                if (mouseWithoutBorders != value)
-                {
-                    LogTelemetryEvent(value);
-                    mouseWithoutBorders = value;
-                }
-            }
-        }
-
-        private bool findMyMouse = true;
-
-        [JsonPropertyName("FindMyMouse")]
-        public bool FindMyMouse
-        {
-            get => findMyMouse;
-            set
-            {
-                if (findMyMouse != value)
-                {
-                    LogTelemetryEvent(value);
-                    findMyMouse = value;
-                }
-            }
-        }
-
-        private bool mouseHighlighter = true;
-
-        [JsonPropertyName("MouseHighlighter")]
-        public bool MouseHighlighter
-        {
-            get => mouseHighlighter;
-            set
-            {
-                if (mouseHighlighter != value)
-                {
-                    LogTelemetryEvent(value);
-                    mouseHighlighter = value;
-                }
-            }
-        }
-
-        private bool mouseJump; // defaulting to off
-
-        [JsonPropertyName("MouseJump")]
-        public bool MouseJump
-        {
-            get => mouseJump;
-            set
-            {
-                if (mouseJump != value)
-                {
-                    LogTelemetryEvent(value);
-                    mouseJump = value;
-                }
-            }
-        }
-
-        private bool alwaysOnTop = true;
-
-        [JsonPropertyName("AlwaysOnTop")]
-        public bool AlwaysOnTop
-        {
-            get => alwaysOnTop;
-            set
-            {
-                if (alwaysOnTop != value)
-                {
-                    LogTelemetryEvent(value);
-                    alwaysOnTop = value;
-                }
-            }
-        }
-
-        private bool mousePointerCrosshairs; // defaulting to off
-
-        [JsonPropertyName("MousePointerCrosshairs")]
-        public bool MousePointerCrosshairs
-        {
-            get => mousePointerCrosshairs;
-            set
-            {
-                if (mousePointerCrosshairs != value)
-                {
-                    LogTelemetryEvent(value);
-                    mousePointerCrosshairs = value;
-                }
-            }
-        }
-
-        private bool powerAccent; // defaulting to off
-
-        [JsonPropertyName("QuickAccent")]
-        public bool PowerAccent
-        {
-            get => powerAccent;
-            set
-            {
-                if (powerAccent != value)
-                {
-                    LogTelemetryEvent(value);
-                    powerAccent = value;
-                }
-            }
-        }
-
-        private bool powerOCR; // defaulting to off
-
-        [JsonPropertyName("TextExtractor")]
-        public bool PowerOcr
-        {
-            get => powerOCR;
-            set
-            {
-                if (powerOCR != value)
-                {
-                    LogTelemetryEvent(value);
-                    powerOCR = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool advancedPaste = true;
-
-        [JsonPropertyName("AdvancedPaste")]
-        public bool AdvancedPaste
-        {
-            get => advancedPaste;
-            set
-            {
-                if (advancedPaste != value)
-                {
-                    LogTelemetryEvent(value);
-                    advancedPaste = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool measureTool = true;
-
-        [JsonPropertyName("Measure Tool")]
-        public bool MeasureTool
-        {
-            get => measureTool;
-            set
-            {
-                if (measureTool != value)
-                {
-                    LogTelemetryEvent(value);
-                    measureTool = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool hosts = true;
-
-        [JsonPropertyName("Hosts")]
-        public bool Hosts
-        {
-            get => hosts;
-            set
-            {
-                if (hosts != value)
-                {
-                    LogTelemetryEvent(value);
-                    hosts = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool autostartup = true;
-
-        [JsonPropertyName("AutoStartup")]
-        public bool AutoStartup
-        {
-            get => autostartup;
-            set
-            {
-                if (autostartup != value)
-                {
-                    LogTelemetryEvent(value);
-                    autostartup = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool fileLocksmith = true;
-
-        [JsonPropertyName("File Locksmith")]
-        public bool FileLocksmith
-        {
-            get => fileLocksmith;
-            set
-            {
-                if (fileLocksmith != value)
-                {
-                    LogTelemetryEvent(value);
-                    fileLocksmith = value;
-                }
-            }
-        }
-
-        private bool peek = true;
-
-        [JsonPropertyName("Peek")]
-        public bool Peek
-        {
-            get => peek;
-            set
-            {
-                if (peek != value)
-                {
-                    LogTelemetryEvent(value);
-                    peek = value;
-                }
-            }
-        }
-
-        private bool registryPreview = true;
-
-        [JsonPropertyName("RegistryPreview")]
-        public bool RegistryPreview
-        {
-            get => registryPreview;
-            set
-            {
-                if (registryPreview != value)
-                {
-                    LogTelemetryEvent(value);
-                    registryPreview = value;
-                }
-            }
-        }
-
-        private bool cmdNotFound = true;
-
-        [JsonPropertyName("CmdNotFound")]
-        public bool CmdNotFound
-        {
-            get => cmdNotFound;
-            set
-            {
-                if (cmdNotFound != value)
-                {
-                    LogTelemetryEvent(value);
-                    cmdNotFound = value;
-                    NotifyChange();
-                }
-            }
-        }
-
-        private bool environmentVariables = true;
-
-        [JsonPropertyName("EnvironmentVariables")]
-        public bool EnvironmentVariables
-        {
-            get => environmentVariables;
-            set
-            {
-                if (environmentVariables != value)
-                {
-                    LogTelemetryEvent(value);
-                    environmentVariables = value;
-                }
-            }
-        }
+        //[JsonPropertyName("EnvironmentVariables")]
+        //public bool EnvironmentVariables
+        //{
+        //    get => environmentVariables;
+        //    set
+        //    {
+        //        if (environmentVariables != value)
+        //        {
+        //            LogTelemetryEvent(value);
+        //            environmentVariables = value;
+        //        }
+        //    }
+        //}
 
         private void NotifyChange()
         {

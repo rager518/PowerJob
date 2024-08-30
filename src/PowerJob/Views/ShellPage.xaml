@@ -63,11 +63,11 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xf0e2;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>-->
-                <NavigationViewItem x:Uid="Shell_PowerStartup" helpers:NavigationHelper.NavigateTo="PowerJob.ViewModels.PowerStartupViewModel">
+                <!--<NavigationViewItem x:Uid="Shell_PowerStartup" helpers:NavigationHelper.NavigateTo="PowerJob.ViewModels.PowerStartupViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                </NavigationViewItem>-->
                 <NavigationViewItem x:Uid="Shell_AutoStartup" helpers:NavigationHelper.NavigateTo="PowerJob.ViewModels.AutoStartupViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xebe8;"/>

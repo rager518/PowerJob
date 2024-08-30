@@ -20,9 +20,10 @@
                 <controls:SettingsGroup x:Uid="AutoStartup_Activation_GroupSettings" IsEnabled="{x:Bind ViewModel.IsEnabled,Mode=TwoWay}">
                     <tkcontrols:SettingsCard x:Uid="AutoStartup_LaunchButtonControl" ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"          
                                              HeaderIcon="{ui:FontIcon Glyph=&#xEA37;}" Command="{x:Bind ViewModel.LaunchEventHandler}" IsClickEnabled="True" />
-                    <!--<tkcontrols:SettingsCard x:Uid="AutoStartup_LaunchButtonControl" HeaderIcon="{ui:BitmapIcon Source=/Assets/Settings/Icons/Hosts.png}">
-                        <ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.LanuchAS,Mode=TwoWay}" />
-                    </tkcontrols:SettingsCard>-->
+                    <tkcontrols:SettingsCard x:Uid="AutoStartup_ExeButtonControl" HeaderIcon="{ui:BitmapIcon Source=/Assets/Settings/Icons/Hosts.png}">
+                        <!--<ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.LanuchAS,Mode=TwoWay}" />-->
+                        <Button Content="Go" Command="{x:Bind ViewModel.GoEventHandler}" />
+                    </tkcontrols:SettingsCard>
                 </controls:SettingsGroup>
 
             </StackPanel>

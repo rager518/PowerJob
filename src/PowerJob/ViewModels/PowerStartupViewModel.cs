@@ -136,7 +136,7 @@ public partial class PowerStartupViewModel : ObservableRecipient
         set => _linePosition = value;
     }
 
-    public void NotifyPropertyChanged([CallerMemberName] string? propertyName = null)
+    public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
     {
         OnPropertyChanged(propertyName);
         SettingsUtils.SaveSettings(Settings.ToJsonString(), HostsSettings.ModuleName);

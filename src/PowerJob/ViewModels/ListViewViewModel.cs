@@ -13,7 +13,7 @@ public partial class ListViewViewModel : ObservableRecipient, INavigationAware
     private readonly ISampleDataService _sampleDataService;
 
     [ObservableProperty]
-    private SampleOrder? selected;
+    private SampleOrder selected;
 
     public ObservableCollection<SampleOrder> SampleItems { get; private set; } = new ObservableCollection<SampleOrder>();
 

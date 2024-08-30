@@ -179,6 +179,17 @@
     <value>Launch Auto Startup Editor</value>
     <comment>"Hosts File Editor" is a product name</comment>
   </data>
+
+	<data name="AutoStartup_ExeButtonControl.Description" xml:space="preserve">
+    <value>e</value>
+    <comment>"Hosts" refers to the system hosts file, do not loc</comment>
+  </data>
+	<data name="AutoStartup_ExeButtonControl.Header" xml:space="preserve">
+    <value>Exe startup fil</value>
+    <comment>"Hosts File Editor" is a product name</comment>
+  </data>
+	
+	
 	<data name="Hosts_EnableToggleControl_HeaderText.Header" xml:space="preserve">
     <value>Enable Hosts File Editor</value>
     <comment>"Hosts File Editor" is the name of the utility</comment>

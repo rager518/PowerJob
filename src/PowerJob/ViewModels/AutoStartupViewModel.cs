@@ -12,6 +12,7 @@ using Settings.UI.Library;
 using Settings.UI.Library.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -56,7 +57,7 @@ public partial class AutoStartupViewModel : ObservableRecipient
         //}
         //else
         {
-            _isEnabled = GeneralSettingsConfig.Enabled.AutoStartup;
+            _isEnabled = GeneralSettingsConfig.Enabled.AutoStarts;
         }
     }
 
@@ -77,7 +78,7 @@ public partial class AutoStartupViewModel : ObservableRecipient
                 _isEnabled = value;
 
                 // Set the status in the general settings configuration
-                GeneralSettingsConfig.Enabled.AutoStartup = value;
+                GeneralSettingsConfig.Enabled.AutoStarts = value;
                 OutGoingGeneralSettings snd = new OutGoingGeneralSettings(GeneralSettingsConfig);
 
                 SendConfigMSG(snd.ToString());
@@ -104,13 +105,14 @@ public partial class AutoStartupViewModel : ObservableRecipient
         }
     }
 
-    public void NotifyPropertyChanged([CallerMemberName] string? propertyName = null)
+    public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
     {
         OnPropertyChanged(propertyName);
         SettingsUtils.SaveSettings(Settings.ToJsonString(), AutoStartupSettings.ModuleName);
     }
 
     public ButtonClickCommand LaunchEventHandler => new ButtonClickCommand(Launch);
+    public ButtonClickCommand GoEventHandler => new ButtonClickCommand(Go);
 
     public void Launch()
     {
@@ -119,6 +121,19 @@ public partial class AutoStartupViewModel : ObservableRecipient
         using (var eventHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
         {
             eventHandle.Set();
+        }
+    }
+
+
+    public void Go()
+    {
+        var settingsUtils = new SettingsUtils();
+
+        var config = settingsUtils.GetSettingsOrDefault<DataSetting>(DataSetting.ModuleName, DataSetting.DataPath);
+
+        foreach (var (name, path) in config.Files)
+        {
+            Process.Start(path);
         }
     }
 }

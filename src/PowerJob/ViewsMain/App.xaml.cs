@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
-
+using Microsoft.UI.Xaml.Controls;
 using PowerJob.Activation;
 using PowerJob.Contracts.Services;
 using PowerJob.Core.Contracts.Services;
@@ -13,7 +13,11 @@ using PowerJob.Notifications;
 using PowerJob.Services;
 using PowerJob.ViewModels;
 using PowerJob.Views;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using Windows.UI.Input.Inking;
+using Windows.UI.Popups;
+using WinRT.Interop;
 
 namespace PowerJob;
 
@@ -62,9 +66,9 @@ public partial class App : Application
     {
         get; set;
     }
-    public static WindowEx MainWindow { get; } = new MainWindow();
+    public static MainWindow MainWindow { get; set; }
 
-    public static UIElement? AppTitlebar { get; set; }
+    public static UIElement AppTitlebar { get; set; }
 
     public App()
     {
@@ -140,13 +144,38 @@ public partial class App : Application
         // https://docs.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.unhandledexception.
     }
 
+    private async void ShowMessageDialog(string content, string title = null)
+    {
+        await ShowDialogAsync(content, title);
+    }
+
+    public static Task<IUICommand> ShowDialogAsync(string content, string title = null)
+    {
+        var dialog = new MessageDialog(content, title ?? string.Empty);
+        var handle = NativeMethods.GetActiveWindow();
+        if (handle == IntPtr.Zero)
+        {
+            throw new InvalidOperationException();
+        }
+
+        InitializeWithWindow.Initialize(dialog, handle);
+        return dialog.ShowAsync().AsTask<IUICommand>();
+    }
+
+
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         base.OnLaunched(args);
         var cmdArgs = Environment.GetCommandLineArgs();
 
-        if (cmdArgs.Length > RequiredArgumentsLaunchedFromRunnerQty)
+        var title = "";
+
+
+        if (cmdArgs.Length >= RequiredArgumentsLaunchedFromRunnerQty)
         {
+            // \\.\pipe\powerjob_runner_03f36e16-43cf-460a-9945-fb2d613a551d
+            // \\.\pipe\powerjob_settings_
+
             ipcmanager = new TwoWayPipeMessageIPCManaged(cmdArgs[(int)Arguments.SettingsPipeName], cmdArgs[(int)Arguments.PTPipeName], (string message) =>
             {
                 if (IPCMessageReceivedCallback != null && message.Length > 0)
@@ -155,7 +184,31 @@ public partial class App : Application
                 }
             });
             ipcmanager.Start();
+
+            title = "Pro Mode";
         }
+        else
+        {
+            //var guid = Guid.NewGuid();
+            //var pipeName = $"\\\\.\\pipe\\powerjob_runner_{guid}";
+            //var settingName = $"\\\\.\\pipe\\powerjob_settings_{guid}";
+
+            //ipcmanager = new TwoWayPipeMessageIPCManaged(settingName, pipeName, (string message) =>
+            //{
+            //    if (IPCMessageReceivedCallback != null && message.Length > 0)
+            //    {
+            //        IPCMessageReceivedCallback(message);
+            //    }
+            //});
+            //ipcmanager.Start();
+
+            title = "Debug Mode";
+        }
+
+
+        // title = cmdArgs.Length.ToString();
+
+        MainWindow = new MainWindow(title);
 
         App.GetService<IAppNotificationService>().Show(string.Format("AppNotificationSamplePayload".GetLocalized(), AppContext.BaseDirectory));
 

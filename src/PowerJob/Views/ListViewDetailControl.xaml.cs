@@ -7,7 +7,7 @@ namespace PowerJob.Views;
 
 public sealed partial class ListViewDetailControl : UserControl
 {
-    public SampleOrder? ListDetailsMenuItem
+    public SampleOrder ListDetailsMenuItem
     {
         get => GetValue(ListDetailsMenuItemProperty) as SampleOrder;
         set => SetValue(ListDetailsMenuItemProperty, value);

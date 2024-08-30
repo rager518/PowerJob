@@ -62,6 +62,7 @@ struct LogSettings
     inline const static std::string fileLocksmithLoggerName = "FileLocksmith";
     inline const static std::wstring alwaysOnTopLogPath = L"always-on-top-log.txt";
     inline const static std::string hostsLoggerName = "hosts";
+    inline const static std::string autostartsLoggerName = "autostarts";
     inline const static std::wstring hostsLogPath = L"Logs\\hosts-log.txt";
     inline const static std::string registryPreviewLoggerName = "registrypreview";
     inline const static std::string cropAndLockLoggerName = "crop-and-lock";

@@ -36,7 +36,7 @@ BOOL APIENTRY DllMain(HMODULE /*hModule*/, DWORD ul_reason_for_call, LPVOID /*lp
 namespace
 {
     // Name of the powertoy module.
-    inline const std::wstring ModuleKey = L"Hosts";
+    inline const std::wstring ModuleKey = L"AutoStarts";
 }
 
 class AutoStartupsModuleInterface : public PowertoyModuleIface
@@ -80,7 +80,7 @@ private:
 
     void launch_process(bool runas)
     {
-        Logger::trace(L"Starting Hosts process");
+        Logger::trace(L"Starting AutoStarts process");
         unsigned long powerjob_pid = GetCurrentProcessId();
 
         std::wstring executable_args = L"";
@@ -118,12 +118,12 @@ public:
     {
         app_name = GET_RESOURCE_STRING(IDS_HOSTS_NAME);
         app_key = ModuleKey;
-        LoggerHelpers::init_logger(app_key, L"ModuleInterface", LogSettings::hostsLoggerName);
+        LoggerHelpers::init_logger(app_key, L"ModuleInterface", LogSettings::autostartsLoggerName);
 
         m_hShowEvent = CreateDefaultEvent(CommonSharedConstants::SHOW_AUTOSTARTUPS_EVENT);
         if (!m_hShowEvent)
         {
-            Logger::error(L"Failed to create show hosts event");
+            Logger::error(L"Failed to create show autostarts event");
             auto message = get_last_error_message(GetLastError());
             if (message.has_value())
             {
@@ -146,7 +146,7 @@ public:
         {
             if (m_enabled && err == ERROR_SUCCESS)
             {
-                Logger::trace(L"{} event was signaled", CommonSharedConstants::SHOW_HOSTS_EVENT);
+                Logger::trace(L"{} event was signaled", CommonSharedConstants::SHOW_AUTOSTARTUPS_EVENT);
 
                 if (is_process_running())
                 {

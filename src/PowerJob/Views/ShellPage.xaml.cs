@@ -1,4 +1,5 @@
-﻿using Microsoft.UI.Xaml;
+﻿using ManagedCommon;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
@@ -15,8 +16,12 @@ namespace PowerJob.Views;
 public sealed partial class ShellPage : Page
 {
     public delegate void IPCMessageCallback(string msg);
+    public delegate bool UpdatingGeneralSettingsCallback(ModuleType moduleType, bool isEnabled);
+
     public static IPCMessageCallback DefaultSndMSGCallback { get; set; }
     public static ShellPage ShellHandler { get; set; }
+    
+    public static UpdatingGeneralSettingsCallback UpdateGeneralSettingsCallback { get; set; }
     public List<System.Action<JsonObject>> IPCResponseHandleList { get; } = new List<System.Action<JsonObject>>();
 
     public ShellViewModel ViewModel { get; }
@@ -34,8 +39,9 @@ public sealed partial class ShellPage : Page
         // TODO: Set the title bar icon by updating /Assets/WindowIcon.ico.
         // A custom title bar is required for full window theme and Mica support.
         // https://docs.microsoft.com/windows/apps/develop/title-bar?tabs=winui3#full-customization
-        App.MainWindow.ExtendsContentIntoTitleBar = true;
-        App.MainWindow.SetTitleBar(AppTitleBar);
+        // TODO Test
+        //App.MainWindow.ExtendsContentIntoTitleBar = true;
+        //App.MainWindow.SetTitleBar(AppTitleBar);
         App.MainWindow.Activated += MainWindow_Activated;
         AppTitleBarText.Text = "AppDisplayName".GetLocalized();
     }
@@ -49,6 +55,12 @@ public sealed partial class ShellPage : Page
         DefaultSndMSGCallback?.Invoke(msg);
         return 0;
     }
+
+    public static void SetUpdatingGeneralSettingsCallback(UpdatingGeneralSettingsCallback implementation)
+    {
+        UpdateGeneralSettingsCallback = implementation;
+    }
+
     private void OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
         TitleBarHelper.UpdateTitleBar(RequestedTheme);
