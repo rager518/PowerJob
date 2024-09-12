@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SwitchDesktops (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SwitchDesktops (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<winuiex:WindowEx
+    x:Class="SwitchDesktops.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SwitchDesktops"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winuiex="using:WinUIEx"
+    Width="190"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <!--<MicaBackdrop/>-->
+        <winuiex:TransparentTintBackdrop />
+        <!--<winuiex:TransparentTintBackdrop TintColor="#554444ff"  />-->
+    </Window.SystemBackdrop>
+
+    <!--<Border x:Name="MyTitleBar" Background="DarkGray" Height="48"></Border>-->
+
+    <Grid x:Name="MainGrid" Loaded="MainGrid_Loaded">
+       
+    </Grid>
+
+</winuiex:WindowEx>
