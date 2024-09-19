@@ -23,6 +23,7 @@
 	<ItemGroup>
 	  <None Remove="Assets\agent.jpg" />
 	  <None Remove="Assets\fav.ico" />
+	  <None Remove="Scripts\Switch.ps1" />
 	  <None Remove="SwitchDesktopsView\SwitchPage.xaml" />
 	</ItemGroup>
 	<ItemGroup>
@@ -40,6 +41,10 @@
 		<Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
 		<Content Include="Assets\StoreLogo.png" />
 		<Content Include="Assets\Wide310x150Logo.scale-200.png" />
+		<Content Include="Helpers\VirtualDesktopManager.cs" />
+		<Content Include="Scripts\Switch.ps1">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -47,8 +52,11 @@
 		<PackageReference Include="Microsoft.WindowsAppSDK" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+		<PackageReference Include="Vanara.PInvoke.User32" />
 		<PackageReference Include="WinUIEx" />
 		<PackageReference Include="CommunityToolkit.Mvvm" />
+		<PackageReference Include="CommunityToolkit.WinUI.Collections" />
+		<PackageReference Include="CommunityToolkit.WinUI.Converters" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 
