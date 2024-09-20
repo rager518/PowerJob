@@ -1,0 +1,4 @@
+#pragma once
+
+
+#define IDS_POWERJOB_CONTEXT_MENU_ENTRY 102
