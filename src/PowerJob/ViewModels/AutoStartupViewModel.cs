@@ -5,7 +5,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using interop;
 using PowerJob.Commands;
-using PowerToys.GPOWrapper;
+//using PowerToys.GPOWrapper;
 
 //using PowerToys.GPOWrapper;
 using Settings.UI.Library;

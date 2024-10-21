@@ -54,6 +54,7 @@
 #pragma warning(push)
 #pragma warning(disable : 4458)
 #include <gdiplus.h>
+#include "context_menu.h"
 #pragma warning(pop)
 
 namespace
@@ -102,6 +103,10 @@ int runner(bool isProcessElevated, bool openSettings, std::string settingsWindow
 #endif
     Trace::RegisterProvider();
     start_tray_icon(isProcessElevated);
+
+    // Add Context Menu
+    addRightClickMenuItemEmpty();
+
     CentralizedKeyboardHook::Start();
 
     int result = -1;
