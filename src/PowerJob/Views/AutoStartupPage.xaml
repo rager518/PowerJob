@@ -24,6 +24,13 @@
                         <!--<ToggleSwitch x:Uid="ToggleSwitch" IsOn="{x:Bind ViewModel.LanuchAS,Mode=TwoWay}" />-->
                         <Button Content="Go" Command="{x:Bind ViewModel.GoEventHandler}" />
                     </tkcontrols:SettingsCard>
+                    
+                    <tkcontrols:SettingsCard x:Uid="AutoStartup_IsAdminControl">
+                        <ToggleSwitch x:Uid="IsAdmin" IsOn="{x:Bind ViewModel.IsAdmin,Mode=TwoWay}"/>
+                    </tkcontrols:SettingsCard>
+                    <tkcontrols:SettingsCard x:Uid="AutoStartup_ContextmenuControl" >
+                        <ToggleSwitch x:Uid="ContextMenu" IsOn="{x:Bind ViewModel.ContextMenu,Mode=TwoWay}"/>
+                    </tkcontrols:SettingsCard>
                 </controls:SettingsGroup>
 
             </StackPanel>

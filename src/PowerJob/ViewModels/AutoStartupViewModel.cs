@@ -25,6 +25,8 @@ public partial class AutoStartupViewModel : ObservableRecipient
 {
     private bool _enabledStateIsGPOConfigured;
     private bool _isEnabled;
+    private bool _isAdmin;
+    private bool _isContextmenu;
     //private GpoRuleConfigured _enabledGpoRuleConfiguration;
 
     private ISettingsUtils SettingsUtils { get; set; }
@@ -58,6 +60,8 @@ public partial class AutoStartupViewModel : ObservableRecipient
         //else
         {
             _isEnabled = GeneralSettingsConfig.Enabled.AutoStarts;
+            _isContextmenu = GeneralSettingsConfig.ContextMenu;
+            _isAdmin = GeneralSettingsConfig.IsAdmin;
         }
     }
 
@@ -84,6 +88,37 @@ public partial class AutoStartupViewModel : ObservableRecipient
                 SendConfigMSG(snd.ToString());
                 OnPropertyChanged(nameof(IsEnabled));
             }
+        }
+    }
+
+
+    public bool IsAdmin
+    {
+        get => _isAdmin;
+        set
+        {
+            _isAdmin = value;
+
+            GeneralSettingsConfig.IsAdmin = value;
+            OutGoingGeneralSettings snd = new OutGoingGeneralSettings(GeneralSettingsConfig);
+
+            SendConfigMSG(snd.ToString());
+            OnPropertyChanged(nameof(IsAdmin));
+        }
+    }
+
+    public bool ContextMenu
+    {
+        get => _isContextmenu;
+        set
+        {
+            _isContextmenu = value;
+
+            GeneralSettingsConfig.ContextMenu = value;
+            OutGoingGeneralSettings snd = new OutGoingGeneralSettings(GeneralSettingsConfig);
+
+            SendConfigMSG(snd.ToString());
+            OnPropertyChanged(nameof(ContextMenu));
         }
     }
 

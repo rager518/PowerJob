@@ -18,6 +18,8 @@ namespace Settings.UI.Library
 {
     public class GeneralSettings : ISettingsConfig
     {
+        [JsonPropertyName("context_menu")]
+        public bool ContextMenu { get; set; }
         // Gets or sets a value indicating whether run PowerJob on start-up.
         [JsonPropertyName("startup")]
         public bool Startup { get; set; }

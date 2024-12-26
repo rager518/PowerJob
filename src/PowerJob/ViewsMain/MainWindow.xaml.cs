@@ -21,6 +21,7 @@ public sealed partial class MainWindow : WindowEx
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/WindowIcon.ico"));
         Content = null;
         Title = title ?? "AppDisplayName".GetLocalized();
+        this.ExtendsContentIntoTitleBar = true;
 
         Logger.LogError("Failed to parse JSON from IPC message.");
 

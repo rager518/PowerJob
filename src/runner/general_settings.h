@@ -10,6 +10,7 @@ struct GeneralSettings
     bool isElevated;
     bool isRunElevated;
     bool isAdmin;
+    bool contextMenu;
     bool enableWarningsElevatedApps;
     bool showNewUpdatesToastNotification;
     bool downloadUpdatesAutomatically;

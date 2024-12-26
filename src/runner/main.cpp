@@ -105,7 +105,7 @@ int runner(bool isProcessElevated, bool openSettings, std::string settingsWindow
     start_tray_icon(isProcessElevated);
 
     // Add Context Menu
-    addRightClickMenuItemEmpty();
+    // addRightClickMenuItemEmpty();
 
     CentralizedKeyboardHook::Start();
 

@@ -132,7 +132,7 @@ void addRightClickMenuItemEmpty() {
 		std::wcout << L"成功创建或打开了注册表键。\n";
 
 		// 设置显示的菜单名称为 "开始右键"
-		const TCHAR* menuName = TEXT("Auto StartUp");
+		const TCHAR* menuName = TEXT("打开Startup");
 		result = RegSetValueEx(
 			hKey,
 			NULL,               // 默认值
@@ -214,3 +214,21 @@ void addRightClickMenuItemEmpty() {
 	}
 }
 
+// 移除右键菜单项的函数
+void removeRightClickMenuItemFile() {
+    LONG result = RegDeleteTree(HKEY_CLASSES_ROOT, TEXT("*\\shell\\StartRightClick"));
+    if (result == ERROR_SUCCESS) {
+        std::wcout << L"成功移除右键菜单项。\n";
+    } else {
+        std::wcerr << L"移除右键菜单项失败。\n";
+    }
+}
+
+void removeRightClickMenuItemEmpty() {
+    LONG result = RegDeleteTree(HKEY_CLASSES_ROOT, TEXT("Directory\\Background\\shell\\StartRightClick"));
+    if (result == ERROR_SUCCESS) {
+        std::wcout << L"成功移除右键菜单项。\n";
+    } else {
+        std::wcerr << L"移除右键菜单项失败。\n";
+    }
+}

@@ -4,3 +4,6 @@
 
 void addRightClickMenuItemFile();
 void addRightClickMenuItemEmpty();
+
+void removeRightClickMenuItemFile();
+void removeRightClickMenuItemEmpty();
