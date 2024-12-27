@@ -162,6 +162,7 @@ void dispatch_json_config_to_modules(const json::JsonObject& powertoys_configs)
 	for (const auto& powertoy_element : powertoys_configs)
 	{
 		const auto element = powertoy_element.Value().Stringify();
+		Logger::info(powertoy_element.Key().c_str());
 		send_json_config_to_module(powertoy_element.Key().c_str(), element.c_str());
 	}
 };
@@ -196,6 +197,7 @@ void dispatch_received_json(const std::wstring& json_to_parse)
 		{
 			Logger::info("收到powerjob数据了");
 			dispatch_json_config_to_modules(value.GetObjectW());
+			Logger::info("收到powerjob数据了");
 			const std::wstring settings_string{ get_all_settings().Stringify().c_str() };
 			{
 				std::unique_lock lock{ ipc_mutex };

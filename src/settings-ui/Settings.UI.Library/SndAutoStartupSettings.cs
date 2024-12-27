@@ -14,7 +14,7 @@ namespace Settings.UI.Library
 {
     public class SndAutoStartupSettings
     {
-        [JsonPropertyName("AutoStartup Guide")]
+        [JsonPropertyName("AutoStartups")]
         public AutoStartupSettings ShortcutGuide { get; set; }
 
         public SndAutoStartupSettings()

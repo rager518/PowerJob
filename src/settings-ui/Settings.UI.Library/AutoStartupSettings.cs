@@ -11,7 +11,7 @@ namespace Settings.UI.Library;
 
 public class AutoStartupSettings : BasePTModuleSettings, ISettingsConfig
 {
-    public const string ModuleName = "AutoStartup";
+    public const string ModuleName = "AutoStartups";
 
     private static readonly JsonSerializerOptions _serializerOptions = new JsonSerializerOptions
     {
