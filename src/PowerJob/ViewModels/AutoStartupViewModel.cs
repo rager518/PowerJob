@@ -26,6 +26,7 @@ public partial class AutoStartupViewModel : ObservableRecipient
     private bool _enabledStateIsGPOConfigured;
     private bool _isEnabled;
     private bool _isAdmin;
+    private bool _useLegacyPressWinKeyBehavior;
     private bool _isContextmenu;
     //private GpoRuleConfigured _enabledGpoRuleConfiguration;
 
@@ -140,9 +141,49 @@ public partial class AutoStartupViewModel : ObservableRecipient
         }
     }
 
+    public HotkeySettings OpenShortcutGuide
+    {
+        get
+        {
+            return Settings.Properties.OpenShortcutGuide;
+        }
+
+        set
+        {
+            if (Settings.Properties.OpenShortcutGuide != value)
+            {
+                Settings.Properties.OpenShortcutGuide = value ?? Settings.Properties.DefaultOpenShortcutGuide;
+                NotifyPropertyChanged();
+            }
+        }
+    }
+
+    public bool UseLegacyPressWinKeyBehavior
+    {
+        get
+        {
+            return _useLegacyPressWinKeyBehavior;
+        }
+
+        set
+        {
+            if (_useLegacyPressWinKeyBehavior != value)
+            {
+                _useLegacyPressWinKeyBehavior = value;
+                Settings.Properties.UseLegacyPressWinKeyBehavior.Value = value;
+                NotifyPropertyChanged();
+            }
+        }
+    }
+
     public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
     {
         OnPropertyChanged(propertyName);
+
+
+        SndAutoStartupSettings outsettings = new SndAutoStartupSettings(Settings);
+        SndModuleSettings<SndAutoStartupSettings> ipcMessage = new SndModuleSettings<SndAutoStartupSettings>(outsettings);
+        SendConfigMSG(ipcMessage.ToJsonString());
         SettingsUtils.SaveSettings(Settings.ToJsonString(), AutoStartupSettings.ModuleName);
     }
 

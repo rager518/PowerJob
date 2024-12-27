@@ -1,145 +1,145 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="AppDisplayName" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="AppDisplayName" xml:space="preserve">
     <value>PowerJob</value>
   </data>
 	<data name="AppDescription" xml:space="preserve">
 		<value>PowerJob</value>
   	</data>
-  <data name="Shell_Main.Content" xml:space="preserve">
+	<data name="Shell_Main.Content" xml:space="preserve">
     <value>Main</value>
   </data>
-  <data name="WebView_Loading.Text" xml:space="preserve">
+	<data name="WebView_Loading.Text" xml:space="preserve">
     <value>Loading...</value>
   </data>
-  <data name="WebView_FailedMessage.Text" xml:space="preserve">
+	<data name="WebView_FailedMessage.Text" xml:space="preserve">
     <value>Page failed to load. Check connection and reload.</value>
   </data>
-  <data name="BrowserBackButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+	<data name="BrowserBackButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Browser back</value>
   </data>
-  <data name="BrowserBackButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+	<data name="BrowserBackButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Browser back</value>
   </data>
-  <data name="BrowserForwardButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+	<data name="BrowserForwardButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Browser forward</value>
   </data>
-  <data name="BrowserForwardButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+	<data name="BrowserForwardButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Browser forward</value>
   </data>
-  <data name="WebView_Reload.Content" xml:space="preserve">
+	<data name="WebView_Reload.Content" xml:space="preserve">
     <value>Reload</value>
   </data>
-  <data name="ReloadButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+	<data name="ReloadButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Reload</value>
   </data>
-  <data name="ReloadButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+	<data name="ReloadButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Reload</value>
   </data>
-  <data name="OpenInBrowserButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+	<data name="OpenInBrowserButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Open in browser</value>
   </data>
-  <data name="OpenInBrowserButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+	<data name="OpenInBrowserButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Open in browser</value>
   </data>
-  <data name="Shell_WebView.Content" xml:space="preserve">
+	<data name="Shell_WebView.Content" xml:space="preserve">
     <value>WebView</value>
   </data>
-  <data name="ListView_NoSelection.Text" xml:space="preserve">
+	<data name="ListView_NoSelection.Text" xml:space="preserve">
     <value>Select an item from the list.</value>
   </data>
-  <data name="Shell_ListView.Content" xml:space="preserve">
+	<data name="Shell_ListView.Content" xml:space="preserve">
     <value>ListView</value>
   </data>
-  <data name="Shell_ContentGrid.Content" xml:space="preserve">
+	<data name="Shell_ContentGrid.Content" xml:space="preserve">
     <value>ContentGrid</value>
   </data>
-  <data name="Settings_Personalization.Text" xml:space="preserve">
+	<data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
   </data>
-  <data name="Settings_Theme.Text" xml:space="preserve">
+	<data name="Settings_Theme.Text" xml:space="preserve">
     <value>Theme</value>
   </data>
-  <data name="Settings_Theme_Light.Content" xml:space="preserve">
+	<data name="Settings_Theme_Light.Content" xml:space="preserve">
     <value>Light</value>
   </data>
-  <data name="Settings_Theme_Dark.Content" xml:space="preserve">
+	<data name="Settings_Theme_Dark.Content" xml:space="preserve">
     <value>Dark</value>
   </data>
-  <data name="Settings_Theme_Default.Content" xml:space="preserve">
+	<data name="Settings_Theme_Default.Content" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="Settings_About.Text" xml:space="preserve">
+	<data name="Settings_About.Text" xml:space="preserve">
     <value>About this application</value>
   </data>
-  <data name="Settings_AboutDescription.Text" xml:space="preserve">
+	<data name="Settings_AboutDescription.Text" xml:space="preserve">
     <value>TODO: Replace with your app description.</value>
   </data>
-  <data name="SettingsPage_PrivacyTermsLink.Content" xml:space="preserve">
+	<data name="SettingsPage_PrivacyTermsLink.Content" xml:space="preserve">
     <value>Privacy Statement</value>
   </data>
-  <data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
+	<data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
     <value>https://YourPrivacyUrlGoesHere/</value>
   </data>
-  <data name="AppNotificationSamplePayload" xml:space="preserve">
+	<data name="AppNotificationSamplePayload" xml:space="preserve">
     <value>&lt;toast launch="action=ToastClick"&gt;
   &lt;visual&gt;
     &lt;binding template="ToastGeneric"&gt;
@@ -153,17 +153,17 @@
   &lt;/actions&gt;
 &lt;/toast&gt;</value>
   </data>
-  <data name="Shell_PowerStartup.Content" xml:space="preserve">
+	<data name="Shell_PowerStartup.Content" xml:space="preserve">
     <value>PowerStartup</value>
   </data>
 	<data name="Shell_AutoStartup.Content" xml:space="preserve">
     <value>AutoStartup</value>
   </data>
 
-  <data name="Shell_SettingsPageControl.Content" xml:space="preserve">
+	<data name="Shell_SettingsPageControl.Content" xml:space="preserve">
     <value>SettingsPageControl</value>
   </data>
-<data name="Hosts_LaunchButtonControl.Description" xml:space="preserve">
+	<data name="Hosts_LaunchButtonControl.Description" xml:space="preserve">
     <value>Manage your hosts file</value>
     <comment>"Hosts" refers to the system hosts file, do not loc</comment>
   </data>
@@ -196,6 +196,9 @@
   </data>
 	<data name="AutoStartup_IsAdminControl.Header" xml:space="preserve">
     <value>Is Admin</value>
+  </data>
+	<data name="Activation_Shortcut.Header" xml:space="preserve">
+    <value>Shortcut</value>
   </data>
 
 	<data name="Hosts_EnableToggleControl_HeaderText.Header" xml:space="preserve">
@@ -290,5 +293,40 @@
   </data>
 	<data name="Hosts_Behavior_GroupSettings.Header" xml:space="preserve">
     <value>Behavior</value>
+  </data>
+
+	<data name="Activation_Shortcut_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+	<data name="Activation_Shortcut_Description" xml:space="preserve">
+    <value>Press a combination of keys to change this shortcut</value>
+  </data>
+	<data name="Activation_Shortcut_With_Disable_Description" xml:space="preserve">
+    <value>Press a combination of keys to change this shortcut.
+Right-click to remove the key combination, thereby deactivating the shortcut.</value>
+  </data>
+	<data name="Activation_Shortcut_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+	<data name="Activation_Shortcut_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+	<data name="Activation_Shortcut_Title" xml:space="preserve">
+    <value>Activation shortcut</value>
+  </data>
+	<data name="InvalidShortcut.Title" xml:space="preserve">
+    <value>Invalid shortcut</value>
+  </data>
+	<data name="InvalidShortcutWarningLabel.Text" xml:space="preserve">
+    <value>Only shortcuts that start with **Windows key**, **Ctrl**, **Alt** or **Shift** are valid.</value>
+    <comment>The ** sequences are used for text formatting of the key names. Don't remove them on translation.</comment>
+  </data>
+	<data name="WarningShortcutAltGr.Title" xml:space="preserve">
+    <value>Possible shortcut interference with Alt Gr</value>
+    <comment>Alt Gr refers to the right alt key on some international keyboards</comment>
+  </data>
+	<data name="WarningShortcutAltGr.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Shortcuts with **Ctrl** and **Alt** may remove functionality from some international keyboards, because **Ctrl** + **Alt** = **Alt Gr** in those keyboards.</value>
+    <comment>The ** sequences are used for text formatting of the key names. Don't remove them on translation.</comment>
   </data>
 </root>

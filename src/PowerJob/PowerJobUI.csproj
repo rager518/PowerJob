@@ -82,12 +82,16 @@
 		<CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
 		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<None Remove="Assets\Settings\HostsFileEditor.png" />
 		<None Remove="Assets\Settings\Modules\HostsFileEditor.png" />
 		<None Remove="Controls\SettingsGroup\SettingsGroup.xaml" />
 		<None Remove="Controls\SettingsPageControl\SettingsPageControl.xaml" />
+		<None Remove="Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml" />
 		<None Remove="Styles\Button.xaml" />
 		<None Remove="Themes\Colors.xaml" />
 		<None Remove="Themes\Generic.xaml" />
@@ -95,6 +99,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Page Remove="Controls\ShortcutControl\ShortcutWithTextLabelControl.xaml" />
 	  <Page Remove="ViewsMain\App.xaml" />
 	</ItemGroup>
 

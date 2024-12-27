@@ -12,7 +12,7 @@ namespace PowerJob.Helpers
 
         static ResourceLoaderInstance()
         {
-            ResourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader("PowerJob.Settings.pri");
+            ResourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader("PowerJobUI.pri");
         }
     }
 }

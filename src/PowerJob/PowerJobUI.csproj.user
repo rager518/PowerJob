@@ -10,6 +10,15 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <Page Update="Controls\KeyVisual\KeyVisual.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ShortcutControl\ShortcutControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ShortcutControl\ShortcutDialogContentControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AutoStartupPage.xaml">
       <SubType>Designer</SubType>
     </Page>

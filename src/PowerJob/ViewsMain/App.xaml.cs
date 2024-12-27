@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
 using PowerJob.Activation;
 using PowerJob.Contracts.Services;
 using PowerJob.Core.Contracts.Services;
@@ -13,9 +12,6 @@ using PowerJob.Notifications;
 using PowerJob.Services;
 using PowerJob.ViewModels;
 using PowerJob.Views;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using Windows.UI.Input.Inking;
 using Windows.UI.Popups;
 using WinRT.Interop;
 
@@ -213,5 +209,11 @@ public partial class App : Application
         App.GetService<IAppNotificationService>().Show(string.Format("AppNotificationSamplePayload".GetLocalized(), AppContext.BaseDirectory));
 
         await App.GetService<IActivationService>().ActivateAsync(args);
+    }
+
+    //private static MainWindow settingsWindow;
+    public static MainWindow GetSettingsWindow()
+    {
+        return MainWindow;
     }
 }
